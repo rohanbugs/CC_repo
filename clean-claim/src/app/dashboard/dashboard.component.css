@@ -12,3 +12,25 @@
 .dropdown{
     margin: 20px;
 }
+
+.patients_details{
+    justify-content: space-between;
+}
+
+.details{
+    width: 100%;
+}
+
+.left-container{
+    border: solid 2px grey;
+    border-radius: 10px;
+    padding: 20px;
+    width: 65%;
+}
+
+.right-container{
+    width: 35%;
+    border: solid 2px grey;
+    border-radius: 10px;
+    padding: 20px;
+}
