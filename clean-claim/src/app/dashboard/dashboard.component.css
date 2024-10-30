@@ -1,0 +1,14 @@
+.card{
+    background-color: white;
+    color: blue;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.card-body{
+    color: aquamarine;
+}
+
+.dropdown{
+    margin: 20px;
+}

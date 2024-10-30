@@ -6,11 +6,12 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, LoginComponent, SignupComponent],
+  imports: [RouterOutlet, ReactiveFormsModule, LoginComponent, SignupComponent, DashboardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
