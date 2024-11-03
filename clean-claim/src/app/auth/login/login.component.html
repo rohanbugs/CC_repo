@@ -1,82 +1,85 @@
-<div class="container mt-5">
+<div class="container mt-3 full-height  ">
 
-  <div class="row">
-    <div class="col-md-6"><img src="https://www.google.co.in/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png" alt="Google Logo" />
-    <img src="https://www.google.co.in/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png" />
-    </div>
+  <div class="row align-items-center justify-content-center h-100">
+
     <div class="col-md-6">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="row">
-            <h2>
+      <div class="m-3">
+        <img src="assets/image.png" class="img-fluid" style="max-width: 360px;" alt="...">
+      </div>
+    </div>
+    <div class="col-md-6" id="formdiv">
+      <div class="row  justify-content-center">
+        <div class="col-md-12 border-primary " style="max-width:360px;">
+          <div class="m-2">
+            <h3 class="text-center text-steelblue ">
               Log in to your account
-            </h2>
-            <p class="text-start">Welcome back! Please enter your details</p>
+            </h3>
+            <p class="text-center" id="login-subtitle">Welcome back! Please enter your details</p>
+
           </div>
+
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="email" id="username" formControlName="username" class="form-control"
+            <div class="mb-2">
+              <label for="email" class="form-label custom-small-text">Email</label>
+              <input type="email" id="email" formControlName="email" class="form-control "
                 placeholder="Enter your email" />
-              <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="text-danger">
-                <small *ngIf="username?.errors?.['required']">Username is required.</small>
-                <small *ngIf="username?.errors?.['email']">Enter a valid email address.</small>
+              <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+                <small *ngIf="email?.errors?.['required']">Username is required.</small>
+                <small *ngIf="email?.errors?.['email']">Enter a valid email address.</small>
               </div>
             </div>
-  
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" id="password" formControlName="password" class="form-control"
-                placeholder="Enter your password" />
+
+            <div class="mb-2">
+              <label for="password" class="form-label custom-small-text">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control "
+                placeholder="*******" />
               <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
                 <small *ngIf="password?.errors?.['required']">Password is required.</small>
-                <small *ngIf="password?.errors?.['pattern']">Password must be at least 5 characters, including uppercase,
+                <small *ngIf="password?.errors?.['pattern']">Password must be at least 5 characters, including
+                  uppercase,
                   lowercase, number, and symbol.</small>
               </div>
             </div>
-  
-            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+
+            <div class="form-check mb-2">
+              <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" id="remember-label" for="flexCheckDefault">
+                    Remember for 30 days
+                  </label>
+                </div>
+
+                <div class="col-6 d-flex align-items-center justify-content-end">
+                  <p id="forget-pass" class="mb-0">Forgot password</p>
+                </div>
+              </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-dark w-100 rounded-0 mb-3 "
+              [disabled]="loginForm.invalid">Login</button>
+
+            <!-- <div id="google-btn"></div> -->
+            
+
+
+            <button class="btn btn-light w-100 border-primary rounded-0 mb-2">Sign in with Google</button>
+
+            <div>
+              <p class="text-center custom-small-text">
+                Don't have an account?
+                <a [routerLink]="['/signup']" class="text-secondary">Sign Up</a>
+
+              </p>
+            </div>
+
           </form>
+
         </div>
       </div>
-  
+
     </div>
   </div>
-  <!-- <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input
-              type="email"
-              id="username"
-              formControlName="username"
-              class="form-control"
-              placeholder="Enter your email"
-            />
-            <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="text-danger">
-              <small *ngIf="username?.errors?.['required']">Username is required.</small>
-              <small *ngIf="username?.errors?.['email']">Enter a valid email address.</small>
-            </div>
-          </div>
-  
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input
-              type="password"
-              id="password"
-              formControlName="password"
-              class="form-control"
-              placeholder="Enter your password"
-            />
-            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
-              <small *ngIf="password?.errors?.['required']">Password is required.</small>
-              <small *ngIf="password?.errors?.['pattern']">Password must be at least 5 characters, including uppercase, lowercase, number, and symbol.</small>
-            </div>
-          </div>
-  
-          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
-        </form>
-      </div>
-    </div> -->
 </div>
