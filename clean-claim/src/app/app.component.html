@@ -1,4 +1,33 @@
-<p>running</p>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="side" opened>
+    <!-- Sidenav content -->
+    <img src="./assets/logo.png" alt="Logo">
+    <mat-nav-list>
+    
+        <img src="./assets/Summary.png" alt="Summary">
+        <img src="./assets/Report.png" alt="Report">
+        <img src="./assets/Message.png" alt="Message">
+      <!-- Add more links as needed -->
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- <mat-sidenav-content>
+    Main content goes here
+     <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My Application</span>
+    </mat-toolbar>
+
+    <div class="content">
+       Place the main content here 
+       <h1>Welcome to My App!</h1> 
+       <p>This is the main content area.</p> 
+    </div>
+  </mat-sidenav-content> -->
+</mat-sidenav-container>
 
 
 <router-outlet ></router-outlet>

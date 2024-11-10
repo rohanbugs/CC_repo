@@ -7,11 +7,26 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, LoginComponent, SignupComponent, DashboardComponent],
+  imports: [
+    RouterOutlet,
+    ReactiveFormsModule,
+    LoginComponent,
+    SignupComponent,
+    DashboardComponent,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
