@@ -1,0 +1,78 @@
+<div class="container mt-3 full-height">
+  <div class="row align-items-center justify-content-center h-100">
+    <div class="col-md-6">
+      <div class="m-3">
+        <img src="assets/image.png" class="img-fluid" style="max-width: 360px;" alt="...">
+      </div>
+    </div>
+
+    <div class="col-md-6" id="formdiv">
+      <div class="row justify-content-center">
+        <div class="col-md-12 border-primary" style="max-width: 360px;">
+          <div class="m-2">
+            <h3 class="text-center text-steelblue">Log in to your account</h3>
+            <p class="text-center" id="login-subtitle">Welcome back! Please enter your details</p>
+          </div>
+
+          <!-- Display error message for incorrect credentials -->
+          <div *ngIf="loginError" class="alert alert-danger text-center">
+            {{ loginError }}
+          </div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-2">
+              <label for="email" class="form-label custom-small-text">Email</label>
+              <input type="email" id="email" formControlName="email" class="form-control"
+                placeholder="Enter your email" />
+              <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+                <small *ngIf="email?.errors?.['required']">Username is required.</small>
+                <small *ngIf="email?.errors?.['email']">Enter a valid email address.</small>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <label for="password" class="form-label custom-small-text">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control"
+                placeholder="*******" />
+              <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
+                
+              </div>
+            </div>
+
+            <div class="form-check mb-2">
+              <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                  <input type="checkbox" id="flexCheckDefault" formControlName="rememberMe" class="form-check-input me-2">
+                  <label for="flexCheckDefault" id="remember-label" class="form-check-label">
+                    Remember for 30 days
+                  </label>
+                </div>
+                <div class="col-6 d-flex align-items-center justify-content-end">
+                  <p id="forget-pass" class="mb-0">Forgot password</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit button with loading indicator -->
+            <button type="submit" class="btn btn-dark w-100 rounded-0 mb-3" [disabled]="loginForm.invalid || isLoading">
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              Login
+            </button>
+
+            <!-- Google sign-in button -->
+            <div id="google-btn" class="mb-2"></div>
+
+            <button class="btn btn-light w-100 border-primary rounded-0 mb-2">Sign in with Google</button>
+
+            <div>
+              <p class="text-center custom-small-text">
+                Don't have an account?
+                <a [routerLink]="['/signup']" class="text-secondary">Sign Up</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

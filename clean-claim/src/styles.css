@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.text-steelblue{
+ color: #5792CC;
+}
+.color-steelblue{
+  background-color: #5792CC;
+}
+.color-babyblue{
+  background-color: #F4F5FA;
+}
+
+.fs-7 {
+  font-size: 12px;
+}
+
+body{
+  font: 'San Francisco', Helvetica, Arial, san-serif;
+}
+/* body {
+    margin: 0;
+    height: 100vh; 
+    background: linear-gradient(to bottom,  #8ba9c6 , white); 
+  } */

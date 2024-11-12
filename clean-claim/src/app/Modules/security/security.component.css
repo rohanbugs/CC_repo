@@ -1,0 +1,15 @@
+.password-container {
+  padding: 20px;
+  max-width: 500px;
+}
+label {
+  font-weight: bold;
+}
+#btn-update {
+  background-color: #5792CC;
+  color: #fff;
+  color: white;
+}
+#btn-update:hover {
+  background-color: #0056b3;
+}

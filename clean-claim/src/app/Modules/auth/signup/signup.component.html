@@ -1,0 +1,94 @@
+<div class="container mt-3 justify-content-center align-items-center full-height ">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-md-12 border-primary" style="max-width:400px;">
+      <div class="m-3">
+        <img src="assets/image.png" class="img-fluid m-1 " alt="...">
+      </div>
+      <h3 id="signup-title" class="text-center text-steelblue ">
+        Create new account
+      </h3>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="mb-3">
+            <label for="email" class="form-label custom-small-text">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control "
+              placeholder="Enter your email" />
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+              <small *ngIf="email?.errors?.['required']">Username is required.</small>
+              <small *ngIf="email?.errors?.['email']">Enter a valid email address.</small>
+            </div>
+          </div> -->
+        <div class="mb-1">
+          <label for="name" class="form-label custom-small-text text-dark">Name</label>
+          <input type="text" formControlName="name" placeholder="enter your name" class="form-control border-dark">
+          <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-danger">
+            <small *ngIf="name?.errors?.['required']">name is required</small>
+            <small *ngIf="name?.errors?.['name']">name should more than 3 letters</small>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <label for="email" class="form-label custom-small-text text-dark">Email</label>
+          <input id="email" formControlName="email" type="email" class="form-control border-dark" placeholder="Enter your email">
+          <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+            <small *ngIf="email?.errors?.['required']">Email is required.</small>
+            <small *ngIf="email?.errors?.['email']">Invalid email format.</small>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <label for="password" class="form-label custom-small-text text-dark">Password</label>
+          <input id="password" formControlName="password" type="password" class="form-control border-dark"
+            placeholder="Enter your email">
+          <div *ngIf="password?.invalid && password?.touched" class="text-danger">
+            <small *ngIf="password?.errors?.['required']">Password is required.</small>
+            <small *ngIf="password?.errors?.['pattern']">
+              Password must have at least 5 characters, one uppercase, one lowercase, one digit, and one special
+              character.
+            </small>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <label for="confirmPassword" class="form-label custom-small-text text-dark">Confirm Password</label>
+          <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control border-dark"
+            placeholder="Enter your email">
+          <div *ngIf="confirmPassword?.invalid && confirmPassword?.touched" class="text-danger">
+            <small *ngIf="confirmPassword?.errors?.['required']">Confirm password is required.</small>
+            <small *ngIf="signupForm?.errors?.['mismatch']">Passwords do not match.</small>
+          </div>
+        </div>
+
+        <div class="mt-1">
+          <p class="text-center custom-small-text">
+            By continuing, you agree to our terms of service
+          </p>
+        </div>
+
+        <button type="submit" class="btn btn-dark w-100 rounded-0 mb-1 " [disabled]="signupForm.invalid">Sign
+          Up</button>
+      </form>
+      <div class="mt-1">
+        <p class="text-center custom-small-text">
+          or sign in with
+        </p>
+      </div>
+      <button class="btn btn-light w-100 border-primary rounded-0 mb-2">Sign in with Google</button>
+
+      <div>
+        <p class="text-center custom-small-text">
+          Already have an account?
+          <a [routerLink]="['/login']" class="text-secondary">Sign in here</a>
+
+        </p>
+      </div>
+
+      
+
+    </div>
+
+
+
+
+  </div>
+
+</div>
