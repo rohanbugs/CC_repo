@@ -1,0 +1,34 @@
+<div class="container-fluid mt-3 color-babyblue p-0" id="Settings">
+    <div class="container fs-7 m-0">
+
+      <app-breadcrumb></app-breadcrumb>
+      <!-- <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb ">
+          <li class="breadcrumb-item"><a href="#">Settings</a></li>
+          <li class="breadcrumb-item active" aria-current="page">All Insights</li>
+        </ol>
+      </nav> -->
+      <!-- used custom text size fs-7 refer src\styles.css -->
+      <p class="fs-7" >Manage your account settings, including personal information, security preferences, and notification settings.</p>
+    </div>
+  
+    <div class="container-fluid">
+        <ul class="nav nav-tabs mb-3 fs-7" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" routerLink="/settings/account" routerLinkActive="active">
+                    Account
+                  </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" routerLink="/settings/security" routerLinkActive="active">
+                    Security
+                  </button>
+            </li>
+          </ul>
+    </div>
+    
+    
+  </div>
+  <router-outlet></router-outlet>
+
+  
