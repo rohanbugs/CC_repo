@@ -1,33 +1,53 @@
-
+<div class="root-container">
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer mode="side" opened>
-    <!-- Sidenav content -->
-    <img src="./assets/logo.png" alt="Logo">
+  <!-- Sidebar -->
+  <mat-sidenav #sidenav mode="side" [opened]="isExpanded" class="sidenav">
+    <!-- Logo area for toggling -->
+    <div class="sidenav-header">
+      <img src="assets/logo.png" alt="Claim Clean Logo" class="logo" />
+      <span class="logo-text" *ngIf="isExpanded">CLAIM CLEAN</span>
+    </div>
+
+    <!-- Menu items -->
     <mat-nav-list>
-    
-        <img src="./assets/Summary.png" alt="Summary">
-        <img src="./assets/Report.png" alt="Report">
-        <img src="./assets/Message.png" alt="Message">
-      <!-- Add more links as needed -->
+      <a mat-list-item routerLink="/summary">
+        <img src="assets/Summary.png" alt="Claim Clean Logo" class="logo w-25 h-25" />
+        <!-- <mat-icon>insert_chart</mat-icon> -->
+        <span *ngIf="isExpanded">Summary</span>
+      </a>
+      <a mat-list-item routerLink="/dashboard">
+        <!-- <mat-icon>compare_arrows</mat-icon> -->
+        <img src="assets/Report.png" alt="Claim Clean Logo" class="logo w-25 h-25" />
+        <span *ngIf="isExpanded">Claims</span>
+      </a>
+      <a mat-list-item routerLink="/messages">
+        <!-- <mat-icon>message</mat-icon> -->
+        <img src="assets/Message.png" alt="Claim Clean Logo" class="logo w-25 h-25" />
+        <span *ngIf="isExpanded">Message</span>
+      </a>
     </mat-nav-list>
+
+    <!-- Footer Section -->
+    <div class="sidenav-footer">
+      <a mat-list-item routerLink="/settings">
+        <!-- <mat-icon>settings</mat-icon> -->
+        <img src="assets/settings.png" alt="Settings" class="logo w-25 h-25" />
+        <span *ngIf="isExpanded">Settings</span>
+      </a>
+    </div>
   </mat-sidenav>
 
-  <!-- <mat-sidenav-content>
-    Main content goes here
-     <mat-toolbar color="primary">
-      <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My Application</span>
-    </mat-toolbar>
-
+  <!-- Main content -->
+  <mat-sidenav-content>
     <div class="content">
-       Place the main content here 
-       <h1>Welcome to My App!</h1> 
-       <p>This is the main content area.</p> 
+      <div class="navbar">
+
+      </div>
+      <router-outlet></router-outlet>
+      <!-- Additional content goes here -->
     </div>
-  </mat-sidenav-content> -->
+  </mat-sidenav-content>
 </mat-sidenav-container>
 
 
-<router-outlet ></router-outlet>
+</div>
