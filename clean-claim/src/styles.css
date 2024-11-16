@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 .text-steelblue{
  color: #5792CC;
 }
@@ -21,3 +22,8 @@ body{
     height: 100vh; 
     background: linear-gradient(to bottom,  #8ba9c6 , white); 
   } */
+=======
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+>>>>>>> Prathamesh/ui-changes

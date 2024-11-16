@@ -1,0 +1,47 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 200px;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: white;
+  transition: width 0.3s ease;
+}
+
+.sidenav-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-weight: bold;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.sidenav-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+}
+
+/* .sidenav:not([opened]) {
+  width: 70px;
+}
+
+.sidenav:not([opened]) .logo-text,
+.sidenav:not([opened]) mat-nav-list a span,
+.sidenav-footer span {
+  display: none;
+} */

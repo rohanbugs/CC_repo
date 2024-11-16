@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+<<<<<<< HEAD
 
 import { TestComponent } from './Modules/test/test.component';
 import { AccountComponent } from './Modules/account/account.component';
@@ -25,4 +26,10 @@ export const routes: Routes = [
     {path:'summary',component:SummaryComponent},
     
       
+=======
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
+
+export const routes: Routes = [
+    {path:'dashboard',component:DashboardComponent}
+>>>>>>> Prathamesh/ui-changes
 ];
