@@ -14,6 +14,7 @@ import { BreadcrumbService } from './breadcrumb-service/breadcrumb.service';
 
 export class BreadcrumbComponent implements OnInit {
   breadcrumb: string[] = [];
+  description?: string;
 
   constructor(
     private router: Router,
@@ -34,6 +35,8 @@ export class BreadcrumbComponent implements OnInit {
 
   private updateBreadcrumb(): void {
     const routePath = this.router.url.split('?')[0]; // Get the current route without query params
-    this.breadcrumb = this.breadcrumbService.getBreadcrumbs(routePath);
+    const { crumbs, description } = this.breadcrumbService.getBreadcrumbs(routePath);
+    this.breadcrumb = crumbs;
+    this.description = description;
   }
 }

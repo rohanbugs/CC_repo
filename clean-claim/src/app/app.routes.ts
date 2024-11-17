@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TestComponent } from './Modules/test/test.component';
 import { AccountComponent } from './Modules/settings/account/account.component';
 import { SecurityComponent } from './Modules/settings/security/security.component';
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path:'signup',component:SignupComponent},
     {path:'reset',component:ResetpasswordComponent},
     {path:'test',component:TestComponent},
+    {path:'claims',component:DashboardComponent},
     // {path:'account',component:AccountComponent},
     // {path:'security',component:SecurityComponent},
     // {path:'settings',component:SettingsComponent},
@@ -23,6 +25,4 @@ export const routes: Routes = [
         { path:'security',component:SecurityComponent }
     ] },
     {path:'summary',component:SummaryComponent},
-    
-      
-];
+]

@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {loginForm: FormGroup;
       this.isLoading = true; // Start loading
       this.loginError = null; // Reset error message
       const { email, password, rememberMe } = this.loginForm.value;
-      this.router.navigate(['/summary']);
+      this.router.navigate(['/claims']);
 
       // this.authService.login(email, password).subscribe({
       //   next: (response) => {
