@@ -13,6 +13,10 @@
   font-size: 12px;
 }
 
+.no-border{
+  border: none;
+}
+
 body{
   font: 'San Francisco', Helvetica, Arial, san-serif;
 }

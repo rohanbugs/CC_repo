@@ -1,1 +1,57 @@
-<p>summary works!</p>
+<div class="container-fluid color-babyblue p-0">
+    <!-- Header -->
+    <div class="color-steelblue text-white p-2 d-flex justify-content-between align-items-center">
+      <h4>Hello Shorya Shriwastav!</h4>
+      <input type="search" class="form-control w-25" placeholder="Search here">
+    </div>
+    <!-- Main Content -->
+    <div class="row color-babyblue no-border p-3">
+
+      <!-- Left Column -->
+      <div class="col-lg-4 color-babyblue no-border">
+        <div class="d-flex justify-content-between">
+          <h5>Claim Overview</h5>
+          <a href="#">View All</a>
+        </div>
+        <div class="card p-0 ">
+          <app-claim-overview></app-claim-overview>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-lg-8">
+        <!-- Statistics -->
+        <div class="card p-3 mb-3">
+          <h5>Statistics</h5>
+          <div>
+            <h6>Weekly Comparison</h6>
+            <canvas id="weeklyChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Monthly Progress -->
+        <div class="card p-3 mb-3">
+          <h6>Monthly Claims Progress</h6>
+          <div class="row">
+            <div class="col-4 text-center">
+              <h6>Shorya Shriwastav</h6>
+              <p>Approved: 25,016</p>
+              <p>Declined: 12,106</p>
+            </div>
+            <div class="col-4 text-center">
+              <h6>Jaden Lee</h6>
+              <p>Approved: 41,257</p>
+              <p>Declined: 20,639</p>
+            </div>
+            <div class="col-4 text-center">
+              <h6>Parker Thompson</h6>
+              <p>Approved: 38,245</p>
+              <p>Declined: 18,653</p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-// import { AuthService } from '../auth.service';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {loginForm: FormGroup;
     return this.loginForm.get('password');
   }
 
- 
+
 
   onSubmit() {
     if (this.loginForm.valid) {
@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {loginForm: FormGroup;
       // this.authService.login(email, password).subscribe({
       //   next: (response) => {
       //     this.isLoading = false; // Stop loading
-          
+
       //     // Store token based on remember me
       //     if (rememberMe) {
       //       localStorage.setItem('authToken', response.token); // Storing in localStorage for persistence

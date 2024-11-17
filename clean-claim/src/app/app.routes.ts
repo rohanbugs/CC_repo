@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
 import { TestComponent } from './Modules/test/test.component';
-import { AccountComponent } from './Modules/account/account.component';
-import { SecurityComponent } from './Modules/security/security.component';
+import { AccountComponent } from './Modules/settings/account/account.component';
+import { SecurityComponent } from './Modules/settings/security/security.component';
 import { SettingsComponent } from './Modules/settings/settings.component';
 import { LoginComponent } from './Modules/auth/login/login.component';
 import { SignupComponent } from './Modules/auth/signup/signup.component';

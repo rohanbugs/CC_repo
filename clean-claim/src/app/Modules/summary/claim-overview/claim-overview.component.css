@@ -1,0 +1,88 @@
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: .85rem;
+  }
+
+  .btn-tab {
+    flex: 1;
+   
+  }
+
+  .btn-tab.active {
+    background-color: inherit; /* Keeps the background color unchanged */
+    color: #5792CC;
+    border-bottom: 2px solid #5792CC; /* Adds a line below the button */
+  }
+
+  .data-section {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .data-section.active {
+    display: block;
+  }
+
+  /* .audit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+  }
+
+  .audit-row:last-child {
+    border-bottom: none;
+  }
+
+  .audit-row span {
+    font-size: 14px;
+    color: #6c757d;
+  }
+
+  .audit-row h6 {
+    margin: 0;
+  }
+
+  .audit-amount {
+    font-weight: bold;
+    color: #6c757d;
+  } */
+
+
+
+  /* --------------- */
+  .audit-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid #eaeaea;
+    padding: 9px 0;
+  }
+  .audit-details {
+    flex-grow: 1;
+  }
+  .audit-title {
+    font-size: .85rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .audit-id {
+    font-size: 0.65rem;
+    color: #6c757d;
+  }
+  .audit-date-amount {
+    text-align: right;
+  }
+  .audit-amount {
+    font-size: .85rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .audit-date {
+    font-size: 0.65rem;
+    color: #6c757d;
+  }

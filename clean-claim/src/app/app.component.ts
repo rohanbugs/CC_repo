@@ -9,7 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ReactiveFormsModule,RouterModule ,RouterModule,HttpClientModule],
+  imports: [RouterOutlet,ReactiveFormsModule,RouterModule ,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
