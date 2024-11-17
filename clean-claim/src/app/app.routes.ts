@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-<<<<<<< HEAD
 
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TestComponent } from './Modules/test/test.component';
 import { AccountComponent } from './Modules/account/account.component';
 import { SecurityComponent } from './Modules/security/security.component';
@@ -16,6 +16,7 @@ export const routes: Routes = [
     {path:'signup',component:SignupComponent},
     {path:'reset',component:ResetpasswordComponent},
     {path:'test',component:TestComponent},
+    {path:'claims',component:DashboardComponent},
     // {path:'account',component:AccountComponent},
     // {path:'security',component:SecurityComponent},
     // {path:'settings',component:SettingsComponent},
@@ -24,12 +25,4 @@ export const routes: Routes = [
         { path:'security',component:SecurityComponent }
     ] },
     {path:'summary',component:SummaryComponent},
-    
-      
-=======
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-
-export const routes: Routes = [
-    {path:'dashboard',component:DashboardComponent}
->>>>>>> Prathamesh/ui-changes
-];
+]

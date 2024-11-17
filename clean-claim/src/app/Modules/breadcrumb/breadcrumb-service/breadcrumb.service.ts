@@ -8,8 +8,7 @@ export class BreadcrumbService {
   private breadcrumbData = BREADCRUMBS;
 
   constructor() {}
-
-  getBreadcrumbs(route: string): string[] {
-    return this.breadcrumbData[route] || [];
+  getBreadcrumbs(route: string): { crumbs: string[]; description?: string } {
+    return this.breadcrumbData[route] || { crumbs: [] };
   }
 }
