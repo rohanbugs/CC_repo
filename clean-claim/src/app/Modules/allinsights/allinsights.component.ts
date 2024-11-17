@@ -1,33 +1,21 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { AllinsightsComponent } from '../allinsights/allinsights.component';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component"
-// import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
+
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-allinsights',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatExpansionModule,
-    MatIconModule,
-    AllinsightsComponent,
-    BreadcrumbComponent,
-    RouterModule,
-    RouterOutlet
-  ],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
+  imports: [CommonModule, MatExpansionModule, MatIconModule],
+  templateUrl: './allinsights.component.html',
+  styleUrl: './allinsights.component.css',
 })
-export class DashboardComponent {
+export class AllinsightsComponent {
   active: number = 0;
   isPanelOpen: { [key: string]: boolean } = {};
 
   constructor() {
-    // Initialize all panels as closed
     this.isPanelOpen = {
       claimInformation: false,
       codingWorksheet: false,
@@ -35,11 +23,6 @@ export class DashboardComponent {
       message: false,
       auditRemark: false,
     };
-  }
-
-  togglePanel(panel: string): void {
-    // Toggle the panel's open/close state
-    this.isPanelOpen[panel] = !this.isPanelOpen[panel];
   }
 
   drgRecords = [

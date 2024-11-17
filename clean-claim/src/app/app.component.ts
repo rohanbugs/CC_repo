@@ -3,7 +3,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 
 import { ReactiveFormsModule } from '@angular/forms';
 // import { AuthModule } from './auth/auth.module';
-
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,18 +27,22 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     MatListModule,
     MatToolbarModule,
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  // title = 'clean-claim';
+  // isExpanded = true;
 
-  title = 'clean-claim';
-  isExpanded = true;
+  constructor(private router: Router){
+    console.log("MAin component loaded")
+  };
 
-  toggleSidebar() {
-    this.isExpanded = !this.isExpanded;
-    console.log(this.isExpanded);
+  shouldShowLayout(): boolean {
+    const hiddenRoutes = ['/','/login','/signup', '/reset'];
+    return !hiddenRoutes.includes(this.router.url);
   }
 }
