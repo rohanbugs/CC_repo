@@ -2,12 +2,18 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { SelectionReasonComponent } from '../selection-reason/selection-reason.component';
 
 
 @Component({
   selector: 'app-allinsights',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, MatIconModule],
+  imports: [
+    CommonModule,
+    MatExpansionModule,
+    MatIconModule,
+    SelectionReasonComponent,
+  ],
   templateUrl: './allinsights.component.html',
   styleUrl: './allinsights.component.css',
 })
