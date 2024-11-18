@@ -10,6 +10,7 @@ import { SignupComponent } from './Modules/auth/signup/signup.component';
 import { ResetpasswordComponent } from './Modules/auth/resetpassword/resetpassword.component';
 import { SummaryComponent } from './Modules/summary/summary.component';
 
+
 export const routes: Routes = [
     {path:'',component:LoginComponent},
     {path:'login',component:LoginComponent},
@@ -25,4 +26,5 @@ export const routes: Routes = [
         { path:'security',component:SecurityComponent }
     ] },
     {path:'summary',component:SummaryComponent},
+    
 ]

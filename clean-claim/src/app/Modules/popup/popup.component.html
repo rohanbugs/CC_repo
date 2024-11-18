@@ -1,0 +1,110 @@
+<h2 mat-dialog-title>Temperature</h2>
+<mat-dialog-content>
+ 
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-3" id="tempTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart-view" type="button" role="tab" aria-controls="chart-view" aria-selected="true">Chart View</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="table-tab" data-bs-toggle="tab" data-bs-target="#table-view" type="button" role="tab" aria-controls="table-view" aria-selected="false">Table View</button>
+      </li>
+    </ul>
+
+    <!-- Date and Time Inputs -->
+    <!-- <div class="d-flex flex-wrap gap-3">
+      <div class="input-group">
+        <label class="input-group-text" for="start-time">Select Start Time</label>
+        <input type="text" class="form-control" id="start-time" placeholder="MM/DD/YYYY hh:mm">
+      </div>
+      <div class="input-group">
+        <label class="input-group-text" for="end-time">Select End Time</label>
+        <input type="text" class="form-control" id="end-time" placeholder="MM/DD/YYYY hh:mm">
+      </div>
+    </div> -->
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Chart View -->
+      <div class="tab-pane fade show active" id="chart-view" role="tabpanel" aria-labelledby="chart-tab">
+        <img src="/assets/temp-chart.jpg">
+      </div>
+
+      <!-- Table View -->
+      <div class="tab-pane fade" id="table-view" role="tabpanel" aria-labelledby="table-tab">
+        <div class="alert alert-secondary" role="alert">
+          
+            <table class="table table-striped temperature-table">
+              <thead>
+                <tr>
+                  <th scope="col">DATE</th>
+                  <th scope="col">TEMPERATURE (FAHRENHEIT)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01/19/2024 00:00:00</td>
+                  <td>102.9</td>
+                </tr>
+                <tr>
+                  <td>01/19/2024 21:30:00</td>
+                  <td>101.9</td>
+                </tr>
+                <tr>
+                  <td>01/19/2024 22:30:00</td>
+                  <td>100.7</td>
+                </tr>
+                <tr>
+                  <td>01/19/2024 23:30:00</td>
+                  <td>99.1</td>
+                </tr>
+                <tr>
+                  <td>01/20/2024 00:25:00</td>
+                  <td>98.3</td>
+                </tr>
+                <tr>
+                  <td>01/20/2024 12:04:00</td>
+                  <td>97.3</td>
+                </tr>
+                <tr>
+                  <td>01/20/2024 16:01:00</td>
+                  <td>98.2</td>
+                </tr>
+                <tr>
+                  <td>01/22/2024 14:59:00</td>
+                  <td>93.3</td>
+                </tr>
+                <tr>
+                  <td>01/22/2024 22:59:00</td>
+                  <td>94.2</td>
+                </tr>
+                <tr>
+                  <td>01/23/2024 00:00:00</td>
+                  <td>97.6</td>
+                </tr>
+                <tr>
+                  <td>01/23/2024 07:59:00</td>
+                  <td>91.9</td>
+                </tr>
+                <tr>
+                  <td>01/23/2024 09:59:00</td>
+                  <td>92.7</td>
+                </tr>
+                <tr>
+                  <td>01/23/2024 18:59:00</td>
+                  <td>97.1</td>
+                </tr>
+              </tbody>
+            </table>
+          
+        
+         
+        </div>
+      </div>
+    </div>
+                       
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closePopup()">Close</button>
+</mat-dialog-actions>

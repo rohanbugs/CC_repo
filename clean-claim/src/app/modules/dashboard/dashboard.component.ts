@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { SelectionReasonComponent } from '../selection-reason/selection-reason.component';
 // import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, MatIconModule],
+  imports: [CommonModule, MatExpansionModule, MatIconModule, SelectionReasonComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
