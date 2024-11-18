@@ -1,9 +1,9 @@
 <div class="main-body">
-
-  <div class="header_content m-3">
+  <app-breadcrumb></app-breadcrumb>
+  <!-- <div class="header_content m-3">
     The Insights page provides a comprehensive view of key metrics and trends derived from user interactions with your
     product with your product.
-  </div>
+  </div> -->
 
   <div class="main_container m-3">
     <!-- Code for selection tab -->
@@ -262,6 +262,26 @@
 
         <!-- </div> -->
 
+    <div class="container-fluid">
+      <ul class="nav nav-tabs mb-3 fs-7" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" routerLink="/claims/allinsights" routerLinkActive="active">
+            All Insights
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" routerLink="/claims/unassigned" routerLinkActive="active">
+            Unassigned
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" routerLink="/claims/priority" routerLinkActive="active">
+            Priority
+          </button>
+        </li>
+      </ul>
     </div>
 
   </div>
+  <router-outlet></router-outlet>
+</div>

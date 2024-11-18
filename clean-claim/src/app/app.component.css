@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 70px;
   overflow: hidden;
   background-color: #ffffff;
   color: white;
@@ -32,16 +32,13 @@
 .sidenav-footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  padding: 16px;
 }
 
-/* .sidenav:not([opened]) {
-  width: 70px;
-}
 
-.sidenav:not([opened]) .logo-text,
-.sidenav:not([opened]) mat-nav-list a span,
-.sidenav-footer span {
-  display: none;
+/* .main-content{
+  margin: 16px;
+  padding: 16px; 
+  position: absolute;
+  box-sizing: border-box; 
 } */
+
