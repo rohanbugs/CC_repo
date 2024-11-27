@@ -36,13 +36,19 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   // title = 'clean-claim';
   // isExpanded = true;
+  isSidebarOpen = true;
 
-  constructor(private router: Router){
-    console.log("MAin component loaded")
-  };
+  constructor(private router: Router) {
+    console.log('MAin component loaded');
+  }
 
   shouldShowLayout(): boolean {
-    const hiddenRoutes = ['/','/login','/signup', '/reset'];
+    const hiddenRoutes = ['/', '/login', '/signup', '/reset'];
     return !hiddenRoutes.includes(this.router.url);
+  }
+
+  // Method to toggle sidebar
+  toggleSidebar(): void {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }

@@ -2,18 +2,24 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatCard } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-allinsights',
   standalone: true,
-  imports: [CommonModule, MatExpansionModule, MatIconModule],
+  imports: [CommonModule, MatExpansionModule, MatIconModule, MatCard, MatMenuModule],
   templateUrl: './allinsights.component.html',
   styleUrl: './allinsights.component.css',
 })
 export class AllinsightsComponent {
   active: number = 0;
   isPanelOpen: { [key: string]: boolean } = {};
+  expandedRow: number | null = null;
+
+  toggleRow(index: number): void {
+    this.expandedRow = this.expandedRow === index ? null : index;
+  }
 
   constructor() {
     this.isPanelOpen = {

@@ -93,6 +93,55 @@ mat-expansion-panel-header{
   margin-top: 10px;
 }
 
+
+/* Style for the button with dots */
+.menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.menu-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the dots */
+.menu-trigger .dot {
+  color: #5792CC; /* Use your desired color for the dots */
+  font-size: 24px;
+  margin: 0 2px;
+}
+
+/* Style for the dropdown menu */
+.custom-menu {
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-menu .menu-item {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-menu .menu-item:hover {
+  background-color: #5792CC;
+  color: white;
+}
+
+
 /* ////////////////////////////////////////////////////////////// */
 /* 
 .dashboard-container {
