@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container" *ngIf="shouldShowLayout()">
   <mat-sidenav #sidenav mode="side" [opened]="true" class="sidenav">
     <div class="sidenav-header">
-      <img src="assets/Vector.png" alt="Logo" class="logo" />
+      <img src="assets/Vector.png" alt="Logo" class="logo" (click)="toggleSidebar" />
     </div>
 
     <mat-nav-list>

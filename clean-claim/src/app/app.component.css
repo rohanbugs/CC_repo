@@ -2,13 +2,13 @@
   height: 100vh;
 }
 
-.sidenav {
+/* .sidenav {
   width: 70px;
   overflow: hidden;
   background-color: #ffffff;
   color: white;
   transition: width 0.3s ease;
-}
+} */
 
 .sidenav-header {
   display: flex;
@@ -34,6 +34,24 @@
   bottom: 0;
 }
 
+/* //////////////////////// */
+
+.sidenav {
+  transition: width 0.3s ease-in-out;
+}
+
+.sidenav.opened {
+  width: 240px;
+}
+
+.sidenav.closed {
+  width: 0;
+  overflow: hidden;
+}
+
+.logo {
+  cursor: pointer;
+}
 
 /* .main-content{
   margin: 16px;
