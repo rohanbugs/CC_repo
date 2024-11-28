@@ -1,12 +1,22 @@
 <div class="container mt-1 ">
     <!-- Vital Signs Section -->
+
     <div class="mb-3">
+      <!-- <div *ngFor="let item of checklistItems" class="checklist-item">
+        <input type="checkbox" [id]="item.id" class="form-check-input">
+        <label [for]="item.id" class="form-check-label ms-2">{{ item.label }}</label>
+        <span class="info-icon" [title]="'Details about ' + item.label">
+          
+          <button mat-button (click)="openPopup(item.label)">i</button>
+        </span> 
+      </div> -->
+    
       <div class="section-title">Vital Signs</div>
       <div class="checklist-container">
         <div class="checklist-item ">
           <input type="checkbox" id="temperature" class="form-check-input">
           <label for="temperature" class="form-check-label ms-2">Temperature</label>
-          <span class="info-icon" title="Details about Temperature"><button mat-button (click)="openPopup()">i</button>
+          <span class="info-icon" title="Details about Temperature"><button mat-button (click)="openPopup('Temperature')">i</button>
 
             </span>
         </div>

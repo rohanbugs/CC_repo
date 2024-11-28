@@ -18,3 +18,33 @@
   .input-group .form-control {
     max-width: 250px;
   }
+  /* Sticky header container */
+.fixed-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Styling for date input */
+.date-input {
+  width: 150px;
+  font-size: 0.875rem;
+}
+
+.date-input input {
+  font-size: 0.875rem;
+  height: 2rem;
+}
+
+.nav-tabs .nav-link {
+  font-weight: 500;
+}
+
+.tab-content {
+  padding-top: 1rem;
+}
+
+.alert {
+  margin-top: 1rem;
+}

@@ -1,0 +1,21 @@
+<div class="container mt-1">
+    <div class="row">
+      <div class="col-md-4 mb-2" *ngFor="let card of cards">
+        <mat-card class="p-2 text-center shadow-sm">
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="avatar rounded-circle bg-light text-secondary">
+              <span>{{ getInitials(card.name) }}</span>
+            </div>
+            <div class="ms-2 text-start">
+              <p class="mb-1 fw-bold">{{ card.name }}</p>
+              <p class="mb-0 text-muted">
+                <strong class="text-success">{{ card.scoreUp }}</strong> <span>&#9650;</span>
+                <strong class="text-danger ms-1">{{ card.scoreDown }}</strong> <span>&#9660;</span>
+              </p>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

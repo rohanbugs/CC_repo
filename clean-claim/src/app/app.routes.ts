@@ -10,6 +10,9 @@ import { SignupComponent } from './Modules/auth/signup/signup.component';
 import { ResetpasswordComponent } from './Modules/auth/resetpassword/resetpassword.component';
 import { SummaryComponent } from './Modules/summary/summary.component';
 import { AllinsightsComponent } from './Modules/allinsights/allinsights.component';
+import { SelectionReasonComponent } from './Modules/selection-reason/selection-reason.component';
+import { TableviewComponent } from './tableview/tableview.component';
+import { MonthlyClaimProgressComponent } from './Modules/summary/monthly-claim-progress/monthly-claim-progress.component';
 
 
 export const routes: Routes = [
@@ -30,5 +33,8 @@ export const routes: Routes = [
         { path:'allinsights',component:AllinsightsComponent  },
     ] },
     {path:'summary',component:SummaryComponent},
+    {path:'selection',component:SelectionReasonComponent},
+    {path:'table',component:TableviewComponent},
+    {path:'mcp',component:MonthlyClaimProgressComponent}
     
 ]

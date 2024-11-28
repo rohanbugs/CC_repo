@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <!-- Dynamically generate table headers from the keys of the first row -->
+        <th *ngFor="let key of getKeys(tableData[0])">{{ key | titlecase }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through each row in the table data -->
+      <tr *ngFor="let row of tableData">
+        <!-- Loop through each key in the row to display its value -->
+        <td *ngFor="let key of getKeys(row)">{{ row[key] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

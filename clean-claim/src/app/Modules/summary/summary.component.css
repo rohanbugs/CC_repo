@@ -1,0 +1,47 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    /* overflow: hidden; */
+     /* Prevent scrolling of the entire page */
+}
+
+.container-fluid {
+    height: 100vh; /* Make the container span the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* .h-85 {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+} */
+
+.row {
+    flex: 1; /* Let the row take the available space */
+    display: flex;
+    overflow: hidden; /* Prevent scrolling of the row itself */
+}
+
+.col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: auto;  */
+    /* Enable scrolling within this column */
+    /* height: 100%; */
+}
+
+.card {
+    background-color: white; /* Optional card background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    border-radius: 8px; /* Optional border radius */
+}
+
+.section-box {
+    overflow-y: auto; /* Ensure inner content can scroll */
+    max-height: 100%; /* Restrict height to prevent overflow */
+}
+
+.col-lg-8 {
+    overflow: hidden; /* Prevent right column from scrolling */
+}

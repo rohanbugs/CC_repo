@@ -1,3 +1,31 @@
+.container {
+  max-height: 100vh; /* Prevent container from exceeding the viewport height */
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+
+.d-flex {
+  position: sticky;
+  top: 0; /* Sticks to the top of the container */
+  z-index: 10; /* Ensures it remains above other elements */
+  background-color: white; /* Match the container background */
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea; /* Optional: Add a divider for better distinction */
+}
+
+.btn-group {
+  position: sticky;
+  top: 40px; /* Adjust to fit below the header */
+  z-index: 10;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea; /* Optional divider */
+  margin-top: 0; /* Remove any margin for better alignment */
+  padding: 5px 0;
+}
+
+
 .btn-group {
     display: flex;
     justify-content: center;
@@ -20,6 +48,8 @@
   .data-section {
     display: none;
     margin-top: 10px;
+    padding-right: 7px;
+    overflow-y: auto; /* Enable scrolling for content */
   }
 
   .data-section.active {
