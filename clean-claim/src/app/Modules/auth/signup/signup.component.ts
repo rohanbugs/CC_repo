@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {  FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +14,7 @@ import { Router, RouterModule } from '@angular/router';
 export class SignupComponent {
   signupForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authservice:AuthService, private router:Router) {
     this.signupForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -39,9 +40,23 @@ export class SignupComponent {
 
   onSubmit() {
     if (this.signupForm.valid) {
-      console.log('Form Submitted', this.signupForm.value);
-    } else {
-      console.log('Form is invalid');
+      const user = {
+        username: this.signupForm.value.name,
+        email: this.signupForm.value.email,
+        password: this.signupForm.value.password,
+        role: 'Auditor' as 'Auditor' // Casting to the exact string type
+      };
+      console.log(user)
+  
+      this.authservice.registerUser(user).subscribe({
+        next: (response) => {
+          console.log(response.message);
+          this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error('Error registering user', err);
+        }
+      });
     }
   }
 

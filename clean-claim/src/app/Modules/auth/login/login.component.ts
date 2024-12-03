@@ -13,40 +13,17 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {loginForm: FormGroup;
-  isLoading = false; // For loading indicator
-  loginError: string | null = null; // For incorrect credentials error
-  rememberMe = false; // For Remember Me checkbox
+export class LoginComponent {
+  loginForm: FormGroup;
+  isLoading = false;
+  loginError: string | null = null;
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    // private authService: AuthService
-  ) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/
-          )
-        ]
-      ],
+      password: ['', [Validators.required]],
       rememberMe: [false]
     });
-  }
-
-  ngOnInit(): void {
-    // Initialize Google sign-in button if applicable
-    google.accounts.id.renderButton(
-      document.getElementById('google-btn'),
-      {
-        theme: 'outline',
-        shape: 'rectangle'
-      }
-    );
   }
 
   get email() {
@@ -57,35 +34,27 @@ export class LoginComponent implements OnInit {loginForm: FormGroup;
     return this.loginForm.get('password');
   }
 
-
-
   onSubmit() {
-    if (this.loginForm.valid) {
-      this.isLoading = true; // Start loading
-      this.loginError = null; // Reset error message
-      const { email, password, rememberMe } = this.loginForm.value;
-      this.router.navigate(['/claims/allinsights']);
+    if (this.loginForm.invalid) return;
 
-      // this.authService.login(email, password).subscribe({
-      //   next: (response) => {
-      //     this.isLoading = false; // Stop loading
+    this.isLoading = true;
+    this.loginError = null;
 
-      //     // Store token based on remember me
-      //     if (rememberMe) {
-      //       localStorage.setItem('authToken', response.token); // Storing in localStorage for persistence
-      //     } else {
-      //       sessionStorage.setItem('authToken', response.token); // Storing in sessionStorage
-      //     }
+    const { email, password, rememberMe } = this.loginForm.value;
 
-      //     // Navigate to dashboard after successful login
-      //     this.router.navigate(['/dashboard']);
-      //   },
-      //   error: (err) => {
-      //     this.isLoading = false; // Stop loading
-      //     this.loginError = 'Incorrect email or password'; // Show error message
-      //     console.error('Login failed', err);
-      //   }
-      // });
-    }
+    this.authService.login(email, password).subscribe({
+      next: (response) => {
+        localStorage.setItem('token', response.access_token);  // Save the token
+        if (rememberMe) {
+          localStorage.setItem('rememberMe', 'true');
+        }
+        this.router.navigate(['/claims']);  // Navigate to dashboard or desired route
+        this.isLoading = false;
+      },
+      error: (error) => {
+        this.loginError = 'Invalid email or password.';
+        this.isLoading = false;
+      }
+    });
   }
 }
