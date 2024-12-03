@@ -1,7 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+
+
+interface UserRegister {
+  username: string;
+  email: string;
+  password: string;
+  role: 'Auditor' | 'Manager' | 'Admin';
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,38 +18,30 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
     
 
-  private apiUrl = 'https://your-backend.com/api/auth';
+  private apiUrl = 'http://127.0.0.1:8000/auth';
   private currentUserSubject = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(credentials: { email: string; password: string }) {
-    return this.http.post(`${this.apiUrl}/login`, credentials).subscribe(
-      (response: any) => {
-        localStorage.setItem('token', response.token);
-        this.currentUserSubject.next(this.decodeToken(response.token));
-        this.router.navigate(['/dashboard']);
-      },
-      (error) => console.error(error)
-    );
+  login(email: string, password: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { email, password };
+
+    return this.http.post(`${this.apiUrl}/login`, body, { headers });
   }
 
-  logout() {
-    localStorage.removeItem('token');
-    this.currentUserSubject.next(null);
-    this.router.navigate(['/login']);
+  registerUser(user: UserRegister): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, user, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
   }
 
-  getCurrentUser() {
-    return this.currentUserSubject.value;
-  }
+  resetPassword(token: string, newPassword: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { token, new_password: newPassword };
 
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
-  }
-
-  private decodeToken(token: string) {
-    const payload = atob(token.split('.')[1]);
-    return JSON.parse(payload);
+    return this.http.post(`${this.apiUrl}/reset-password`, body, { headers });
   }
 }

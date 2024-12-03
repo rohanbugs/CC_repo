@@ -19,7 +19,9 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-popup',
   standalone: true,
-  imports: [CommonModule,MatDialogModule,FormsModule,MatButtonModule,TestComponent,LinegraphComponent,MatInputModule,TableviewComponent,MatNativeDateModule,MatDatepickerModule],
+  imports: [CommonModule,MatDialogModule,FormsModule,
+    MatButtonModule,TestComponent,LinegraphComponent,MatInputModule,
+    TableviewComponent,MatNativeDateModule,MatDatepickerModule],
   templateUrl: './popup.component.html',
   styleUrl: './popup.component.css'
 })

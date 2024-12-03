@@ -48,3 +48,35 @@
 .alert {
   margin-top: 1rem;
 }
+
+.input-group .form-control {
+  border-right: none;
+}
+.input-group-text {
+  background-color: #f8f9fa;
+  border-left: none;
+  cursor: pointer;
+}
+
+.headline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+.date-picker-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.date-picker {
+  width: 200px;
+}
