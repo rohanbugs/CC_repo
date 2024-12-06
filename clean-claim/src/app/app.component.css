@@ -53,10 +53,15 @@
   cursor: pointer;
 }
 
-/* .main-content{
-  margin: 16px;
-  padding: 16px; 
-  position: absolute;
-  box-sizing: border-box; 
-} */
+
+.layout {
+  display: flex;
+  height: 100vh;
+
+  .main-content {
+    flex: 1; /* Take the remaining space */
+    padding: 1rem;
+    overflow: auto; /* Ensure scrollable content */
+  }
+}
 

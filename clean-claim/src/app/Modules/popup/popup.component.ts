@@ -5,7 +5,6 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { MatDatepickerModule } from '@angular/material/datepicker';
 // import { ChartData, ChartOptions ,Chart,registerables} from 'chart.js';
 import { MatButtonModule } from '@angular/material/button';
-import {TestComponent} from '../test/test.component'
 import { TabledataService } from '../../tableview/tabledata.service';
 import { LinegraphComponent } from '../../linegraph/linegraph.component';
 import { TableviewComponent } from '../../tableview/tableview.component';
@@ -20,7 +19,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-popup',
   standalone: true,
   imports: [CommonModule,MatDialogModule,FormsModule,
-    MatButtonModule,TestComponent,LinegraphComponent,MatInputModule,
+    MatButtonModule,LinegraphComponent,MatInputModule,
     TableviewComponent,MatNativeDateModule,MatDatepickerModule],
   templateUrl: './popup.component.html',
   styleUrl: './popup.component.css'

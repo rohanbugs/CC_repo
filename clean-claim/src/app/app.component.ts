@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { SidenavComponent } from './Modules/sidenav/sidenav.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { DashboardComponent } from './Modules/dashboard/dashboard.component';
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterOutlet,
     ReactiveFormsModule,
     DashboardComponent,
+    SidenavComponent,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
