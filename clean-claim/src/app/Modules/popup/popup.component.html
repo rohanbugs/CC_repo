@@ -1,98 +1,67 @@
-<div class="headline-container">
-  <h3 class="section-title">Temperature</h3>
-  <div class="date-picker-container">
-    <!-- Start Time Picker -->
-    <mat-form-field appearance="outline" class="date-picker">
-      <mat-label>Select Start Time</mat-label>
-      <input matInput [matDatepicker]="startPicker" placeholder="MM/DD/YYYY" />
-      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
-      <mat-datepicker #startPicker></mat-datepicker>
-    </mat-form-field>
-
-    <!-- End Time Picker -->
-    <mat-form-field appearance="outline" class="date-picker">
-      <mat-label>Select End Time</mat-label>
-      <input matInput [matDatepicker]="endPicker" placeholder="MM/DD/YYYY" />
-      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
-      <mat-datepicker #endPicker></mat-datepicker>
-    </mat-form-field>
+<div class="container mt-4">
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <h3 class="mb-4">{{vitalLabel}}</h3>
+    </div>
+    <div class="col-auto ms-auto">
+      <!-- Date Pickers -->
+      <div class="d-flex flex-wrap gap-3">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Select Start Time</mat-label>
+          <input matInput [matDatepicker]="startPicker" placeholder="MM/DD/YYYY hh:mm" />
+          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Select End Time</mat-label>
+          <input matInput [matDatepicker]="endPicker" placeholder="MM/DD/YYYY hh:mm" />
+          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
   </div>
-</div>
 
-
-<mat-dialog-content>
-  <!-- Fixed Top Container -->
-  <div class="fixed-header bg-light p-3">
-    <!-- Tabs -->
-    <ul class="nav nav-tabs mb-3" id="tempTabs" role="tablist">
+  <!-- Tabs -->
+  <div class="d-flex justify-content-between align-items-center flex-wrap">
+    <ul class="nav nav-tabs mb-3" id="viewTabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button
-          class="nav-link active"
-          id="chart-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#chart-view"
+          class="nav-link"
+          [class.active]="selectedView === 'graph'"
+          (click)="selectView('graph')"
           type="button"
-          role="tab"
-          aria-controls="chart-view"
-          aria-selected="true"
         >
-          Chart View
+          Graph View
         </button>
       </li>
       <li class="nav-item" role="presentation">
         <button
           class="nav-link"
-          id="table-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#table-view"
+          [class.active]="selectedView === 'table'"
+          (click)="selectView('table')"
           type="button"
-          role="tab"
-          aria-controls="table-view"
-          aria-selected="false"
         >
           Table View
         </button>
       </li>
-     
-      
-      
-
-      <li>
-        
-      </li>
     </ul>
-
-    <!-- Date and Time Inputs -->
-    <div class="d-flex flex-wrap gap-3">
-     
-    </div>
   </div>
 
-  <!-- Tab Content -->
-  <div class="tab-content mt-4">
-    <!-- Chart View -->
-    <div
-      class="tab-pane fade show active"
-      id="chart-view"
-      role="tabpanel"
-      aria-labelledby="chart-tab"
-    >
-      <app-linegraph [tableData]="tableData"></app-linegraph>
+  <!-- Views -->
+  <div class="views-container">
+    <div *ngIf="selectedView === 'graph'">
+      <!-- Graph View Content -->
+      <app-linegraph></app-linegraph>
     </div>
-
-    <!-- Table View -->
-    <div
-      class="tab-pane fade"
-      id="table-view"
-      role="tabpanel"
-      aria-labelledby="table-tab"
-    >
-      <div class="alert alert-secondary" role="alert">
-        <app-tableview></app-tableview>
-      </div>
+    <div *ngIf="selectedView === 'table'">
+      <!-- Table View Content -->
+      <app-tableview></app-tableview>
     </div>
   </div>
-</mat-dialog-content>
+</div>
+
+
 <mat-dialog-actions>
   <button mat-button (click)="closePopup()">Close</button>
 </mat-dialog-actions>

@@ -1,17 +1,59 @@
-#Header, #footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: red; /* Background color to cover content */
-    border-bottom: 1px solid #ccc; /* Optional: border for header */
-  }
-  #Header {
-    top: 0;
-  }
-  #footer {
-    bottom: 0;
-    max-height: 10vh;
+.container {
+  .form-field {
+    min-width: 200px;
+    max-width: 300px;
+    width: 100%;
   }
 
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-tabs {
+    flex: 1;
+  }
+
+  .nav-link {
+    color: #6c757d;
+
+    &.active {
+      color: #6f42c1;
+      border-color: #6f42c1;
+    }
+  }
+
+  .d-flex {
+    gap: 1rem;
+  }
+
+  .form-field {
+    min-width: 70px; /* Minimum width of the date picker */
+    max-width: 200px; /* Maximum width of the date picker */
+    width: 100%; /* Responsive width */
+    font-size: 0.775rem; /* Smaller font size */
+  }
   
+  .mat-form-field {
+    height: 30px; /* Adjust the height of the input field */
+  }
+  
+  .mat-form-field-infix {
+    padding: 0 10px; /* Reduce the padding inside the field */
+  }
+  
+  .mat-form-field-wrapper {
+    padding-bottom: 0.25rem; /* Adjust the spacing inside the wrapper */
+  }
+  
+
+  @media (max-width: 768px) {
+    .d-flex {
+      flex-direction: column;
+    }
+
+    .form-field {
+      width: 100%;
+    }
+  }
+}

@@ -33,12 +33,20 @@ export class PopupComponent implements OnInit{
   startDate: Date | null = null; // Start date model
   endDate: Date | null = null; // End date model
 
+  // Inject the data passed from the parent component (ChecklistItem)
+
   constructor(
     public dialogRef: MatDialogRef<PopupComponent>,
     private tabledataservice: TabledataService,
-    @Inject(MAT_DIALOG_DATA) public data: { vital: string }
-  ) {
-    this.vitalLabel = data.vital;
+    @Inject(MAT_DIALOG_DATA) public data: { id: string, label: string, info: string }) {
+    this.vitalLabel = data.id;
+  }
+
+  selectedView: string = 'graph'; // Default view is Graph View
+
+  // Method to select view
+  selectView(view: string): void {
+    this.selectedView = view;
   }
 
   ngOnInit(): void {
