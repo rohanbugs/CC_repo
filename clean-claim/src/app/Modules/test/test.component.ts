@@ -1,14 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, Input, SimpleChanges } from '@angular/core';
-import { GraphService } from './graph-service.service';
-import { Chart, registerables } from 'chart.js';
-import { LinegraphComponent } from '../../linegraph/linegraph.component';
-import { MatCard } from '@angular/material/card';
-import { CommonModule, NgIf } from '@angular/common';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'app-test',
   standalone: true,
-  imports: [LinegraphComponent,MatCard,CommonModule,NgIf],
+  imports: [ CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
