@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, Input, SimpleChanges } from '@angular/core';
+import { MatCard } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,7 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule,],
+    MatNativeDateModule,
+    MatCard,
+  ],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })

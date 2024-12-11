@@ -1,59 +1,46 @@
-.container {
-  .form-field {
-    min-width: 200px;
-    max-width: 300px;
-    width: 100%;
-  }
+mat-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
 
-  h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+h6 {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
 
-  .nav-tabs {
-    flex: 1;
-  }
+.small-text {
+  font-size: 0.70rem;
+  margin-bottom: 3px;
+  line-height: 1;
+  color: #555;
+}
 
-  .nav-link {
-    color: #6c757d;
+/* .small-text {
+  font-size: 0.75rem;
+  margin-bottom: 2px;
+  line-height: 1;
+  color: #414040;
+} */
+.claim-detail-text {
+  font-size: 0.60rem;
+  margin-bottom: 2px;
+  line-height: 1;
+  color: #414040;
+}
 
-    &.active {
-      color: #6f42c1;
-      border-color: #6f42c1;
-    }
-  }
+.value {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #000;
+  margin-top: -5px;
+}
 
-  .d-flex {
-    gap: 1rem;
-  }
-
-  .form-field {
-    min-width: 70px; /* Minimum width of the date picker */
-    max-width: 200px; /* Maximum width of the date picker */
-    width: 100%; /* Responsive width */
-    font-size: 0.775rem; /* Smaller font size */
-  }
-  
-  .mat-form-field {
-    height: 30px; /* Adjust the height of the input field */
-  }
-  
-  .mat-form-field-infix {
-    padding: 0 10px; /* Reduce the padding inside the field */
-  }
-  
-  .mat-form-field-wrapper {
-    padding-bottom: 0.25rem; /* Adjust the spacing inside the wrapper */
-  }
-  
-
-  @media (max-width: 768px) {
-    .d-flex {
-      flex-direction: column;
-    }
-
-    .form-field {
-      width: 100%;
-    }
-  }
+.tile {
+  /* border: 1px solid #ddd; */
+  padding: 2px 0;
+  border-radius: 2px;
+  margin-bottom: 2px;
 }

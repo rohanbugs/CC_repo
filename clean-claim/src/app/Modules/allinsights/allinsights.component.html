@@ -21,11 +21,11 @@
         <ng-container class="m-3" *ngFor="let row of drgRecords; let i = index">
           <!-- Main Row -->
           <tr class="pointer">
-            <td (click)="toggleRow(i)">{{ row.description }}</td>
-            <td>{{ row.code }}</td>
-            <td>{{ row.amount  }}</td>
-            <td>{{ row.patientId }}</td>
-            <td>{{ row.patientName }}</td>
+            <td (click)="toggleRow(i)">{{ row.drg_description }}</td>
+            <td>{{ row.arl }}</td>
+            <td>{{ row.paid_amt  }}</td>
+            <td>{{ row.patient_id }}</td>
+            <td>{{ row.assigned_to }}</td>
             <td>{{ row.status }}</td>
             <td>
               <button mat-button [matMenuTriggerFor]="menu" class="menu-trigger">
@@ -56,7 +56,8 @@
                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                         <div class="details d-flex">
+                        <app-claim-details [claimid]="row.claim_id"></app-claim-details>
+                         <!-- <div class="details d-flex">
                            <div class="left-container">
                              <div class="patients_details d-flex">
                                <h4>Patients Details</h4>
@@ -159,7 +160,8 @@
                              </div>
 
                            </div>
-                         </div>
+                         </div> -->
+
 
                        </div>
                      </div>

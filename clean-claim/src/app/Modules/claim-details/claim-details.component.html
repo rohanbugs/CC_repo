@@ -1,0 +1,87 @@
+<div class="container mt-1">
+    <div class="row">
+      <!-- Patient Details Section -->
+      <div class="col-md-7">
+        <mat-card class="p-2">
+          <h6 class="mb-2">Patient Details</h6>
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <p class="m-0">{{claimDetails.drg_description}}</p>
+              <p class="">{{claimDetails.patient_name}}</p>
+              
+            </div>
+            <div>
+              <p class="small-text ">Service Period</p>
+              <p class="small-text mb-1">{{claimDetails.admit_date}} - {{claimDetails.discharge_date}}</p>
+              <p class="small-text ">Age:{{claimDetails.age}}</p>
+              <p class="small-text mb-1"></p>
+              <p class="small-text ">Gender:{{claimDetails.gender}}</p>
+              <p class="small-text mb-1"></p>
+            </div>
+          </div>
+          <div>
+            <p class="small-text mt-1">Discharge Status</p>
+            <ul class="small-text">
+                {{claimDetails.discharge_status}}
+
+            </ul>
+          </div>
+        </mat-card>
+      </div>
+  
+      <!-- Claim Details Section -->
+      <div class="col-md-5">
+        <mat-card class="p-2">
+          <h6 class="mb-2">Claim Details</h6>
+          <div class="row">
+            <!-- Tile 1 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">Billed DRG</p>
+              <p class="value">{{claimDetails.billed_drg}}</p>
+            </div>
+            <!-- Tile 2 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">DRG MDC</p>
+              <p class="value">{{claimDetails.drg_mdc}}</p>
+            </div>
+            <!-- Tile 3 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">DRG Type</p>
+              <p class="value">{{claimDetails.drg_type}}</p>
+            </div>
+            <!-- Tile 4 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">DRG Weights</p>
+              <p class="value">{{claimDetails.drg_weight}}</p>
+            </div>
+            <!-- Tile 5 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">Spatial Pay DRG</p>
+              <p class="value">{{claimDetails.spatial_pay_drg}}</p>
+            </div>
+            <!-- Tile 6 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">Post Acute DRG</p>
+              <p class="value">{{claimDetails.post_acute_drg}}</p>
+            </div>
+            <!-- Tile 7 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">AMOLS</p>
+              <p class="value">{{claimDetails.amols}}</p>
+            </div>
+            <!-- Tile 8 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">GMOLS</p>
+              <p class="value">{{claimDetails.gmols}}</p>
+            </div>
+            <!-- Tile 9 -->
+            <div class="col-4 text-center tile">
+              <p class="claim-detail-text">Length Of Stay</p>
+              <p class="value">{{claimDetails.length_of_stay}}</p>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
