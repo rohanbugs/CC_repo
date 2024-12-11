@@ -1,0 +1,48 @@
+mat-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    height: auto;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  h6 {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  .small-text {
+    font-size: 0.70rem;
+    margin-bottom: 3px;
+    line-height: 1;
+    color: #555;
+  }
+  
+  /* .small-text {
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+    line-height: 1;
+    color: #414040;
+  } */
+  .claim-detail-text {
+    font-size: 0.60rem;
+    margin-bottom: 2px;
+    font-weight: normal;
+    line-height: 1;
+    color: #414040;
+  }
+  
+  .value {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #000;
+    margin-top: -3px;
+  }
+  
+  .tile {
+    /* border: 1px solid #ddd; */
+    padding: 2px 0;
+    border-radius: 2px;
+    margin-bottom: 2px;
+  }
+  

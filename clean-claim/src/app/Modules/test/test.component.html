@@ -1,58 +1,97 @@
-<div class="container mt-4">
-  <div class="row align-items-center">
-    <div class="col-auto">
-      <h3 class="mb-4">Temperature</h3>
+<div class="container mt-3">
+  <div class="row">
+    <!-- Patient Details Section -->
+    <div class="col-md-7">
+      <mat-card class="p-2">
+        <h6 class="mb-2">Patient Details</h6>
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <p class="m-0">Patient Name</p>
+            <p class="">John Doe</p>
+            
+          </div>
+          <div>
+            <p class="small-text ">Service Period</p>
+            <p class="small-text mb-1">08/08/2024 - 08/10/2024</p>
+            <p class="small-text ">Age:69 Yrs</p>
+            <p class="small-text mb-1"></p>
+            <p class="small-text ">Gender:Male</p>
+            <p class="small-text mb-1"></p>
+          </div>
+        </div>
+        <div>
+          <p class="small-text mt-1">Discharge Status</p>
+          <ul class="small-text">
+            <li>
+              Users encounter difficulties during the checkout process,
+              particularly in editing or removing items from their cart.
+            </li>
+            <li>
+              They express frustration with the lack of a "back" button or clear
+              navigation options to revisit previous steps.
+            </li>
+            <li>
+              Simplifying the checkout flow by introducing intuitive editing
+              options and enhancing navigation controls could improve user
+              satisfaction and streamline the purchasing journey.
+            </li>
+          </ul>
+        </div>
+      </mat-card>
     </div>
-    <div class="col-auto ms-auto">
-      <!-- Date Pickers -->
-      <div class="d-flex flex-wrap gap-3">
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-label>Select Start Time</mat-label>
-          <input matInput [matDatepicker]="startPicker" placeholder="MM/DD/YYYY hh:mm" />
-          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
-          <mat-datepicker #startPicker></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field class="form-field" appearance="outline">
-          <mat-label>Select End Time</mat-label>
-          <input matInput [matDatepicker]="endPicker" placeholder="MM/DD/YYYY hh:mm" />
-          <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
-          <mat-datepicker #endPicker></mat-datepicker>
-        </mat-form-field>
-      </div>
-    </div>
-  </div>
 
-  <div class="d-flex justify-content-between align-items-center flex-wrap">
-    <!-- Tabs -->
-    <ul class="nav nav-tabs mb-3" id="viewTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active"
-          id="chart-view-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#chartView"
-          type="button"
-          role="tab"
-          aria-controls="chartView"
-          aria-selected="true"
-        >
-          Chart View
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link"
-          id="table-view-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#tableView"
-          type="button"
-          role="tab"
-          aria-controls="tableView"
-          aria-selected="false"
-        >
-          Table View
-        </button>
-      </li>
-    </ul>
+    <!-- Claim Details Section -->
+    <div class="col-md-5">
+      <mat-card class="p-2">
+        <h6 class="mb-2">Claim Details</h6>
+        <div class="row">
+          <!-- Tile 1 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">Billed DRG</p>
+            <p class="value">128</p>
+          </div>
+          <!-- Tile 2 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">DRG MDC</p>
+            <p class="value">12</p>
+          </div>
+          <!-- Tile 3 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">DRG Type</p>
+            <p class="value">MED</p>
+          </div>
+          <!-- Tile 4 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">DRG Weights</p>
+            <p class="value">1.031</p>
+          </div>
+          <!-- Tile 5 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">Spatial Pay DRG</p>
+            <p class="value">Yes</p>
+          </div>
+          <!-- Tile 6 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">Post Acute DRG</p>
+            <p class="value">No</p>
+          </div>
+          <!-- Tile 7 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">AMOLS</p>
+            <p class="value">4.2</p>
+          </div>
+          <!-- Tile 8 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">GMOLS</p>
+            <p class="value">3.1</p>
+          </div>
+          <!-- Tile 9 -->
+          <div class="col-4 text-center tile">
+            <p class="claim-detail-text">Length Of Stay</p>
+            <p class="value">2</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
   </div>
 </div>
