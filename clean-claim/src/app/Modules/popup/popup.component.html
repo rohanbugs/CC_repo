@@ -52,11 +52,11 @@
   <div class="views-container">
     <div *ngIf="selectedView === 'graph'">
       <!-- Graph View Content -->
-      <app-linegraph></app-linegraph>
+      <app-linegraph [tableData]="tableData"></app-linegraph>
     </div>
     <div *ngIf="selectedView === 'table'">
       <!-- Table View Content -->
-      <app-tableview></app-tableview>
+      <app-tableview [tableData]="tableData"></app-tableview>
     </div>
   </div>
 </div>

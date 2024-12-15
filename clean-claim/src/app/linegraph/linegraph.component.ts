@@ -33,10 +33,19 @@ export class LinegraphComponent {
 
   private updateChartData(): void {
     const graphData = this.prepareLineGraphData(this.tableData);
-
+  
     const canvasElement = document.getElementById('lineChart') as HTMLCanvasElement;
-
+  
     if (canvasElement) {
+      // Find min and max values from the dataset
+      const minValue = Math.min(...this.tableData.map(row => row.value));
+      const maxValue = Math.max(...this.tableData.map(row => row.value));
+  
+      // Add some margin to the min and max values
+      const margin = 0.1; // Adjust this to your preference
+      const suggestedMin = minValue - margin;
+      const suggestedMax = maxValue + margin;
+  
       // Initialize chart
       this.chart = new Chart(canvasElement, {
         type: 'line',
@@ -57,14 +66,22 @@ export class LinegraphComponent {
                 display: true,
                 text: graphData.xLabel || 'Date'
               },
-              beginAtZero: true
+              beginAtZero: false
             },
             y: {
               title: {
                 display: true,
                 text: graphData.yLabel || 'Values'
               },
-              beginAtZero: true
+              suggestedMin: suggestedMin, // Dynamically set the minimum value
+              suggestedMax: suggestedMax, // Dynamically set the maximum value
+              ticks: {
+                stepSize: 0.1, // Granularity for tick marks
+                callback: function (value) {
+                  return (Number(value)).toFixed(1); 
+                  // Display one decimal place
+                }
+              }
             }
           }
         }
@@ -73,6 +90,8 @@ export class LinegraphComponent {
       console.error('Canvas element with ID "lineChart" not found.');
     }
   }
+  
+  
 
   // Implementing the graph data preparation logic directly in the component
   private prepareLineGraphData(tableData: any[]) {

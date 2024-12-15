@@ -16,12 +16,7 @@ export class TabledataService {
 
   constructor(private http: HttpClient) {}
 
-  getVitalData(vital: string): Observable<TableData[]> {
-    const url = `${this.baseUrl}/${vital}`; // Construct the URL based on the vital selected
-    // const url = `${this.baseUrl}/bc`;
-    return this.http.get<TableData[]>(url); // Make the GET request and return the data
-  }
-
+  
   
 
  
