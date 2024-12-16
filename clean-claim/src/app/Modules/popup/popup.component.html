@@ -45,6 +45,16 @@
           Table View
         </button>
       </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          [class.active]="selectedView === 'enity-annot'"
+          (click)="selectView('enity-annot')"
+          type="button"
+        >
+          Excerpts
+        </button>
+      </li>
     </ul>
   </div>
 
@@ -57,6 +67,10 @@
     <div *ngIf="selectedView === 'table'">
       <!-- Table View Content -->
       <app-tableview [tableData]="tableData"></app-tableview>
+    </div>
+    <div *ngIf="selectedView === 'enity-annot'">
+      <!-- Table View Content -->
+      <app-entity-annot [claimId]="data.claimid" [attribute]="data.attirbute"></app-entity-annot>
     </div>
   </div>
 </div>

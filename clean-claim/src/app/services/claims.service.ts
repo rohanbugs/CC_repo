@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { response } from 'express';
 import { map, Observable } from 'rxjs';
 
 
@@ -43,6 +44,12 @@ export class ClaimsService {
         )
       )
     );
+  }
+
+  getEntityAnnot(claimId: string, attributeName: string):Observable<any[]>{
+    const url = `${this.apiUrl}claim-attribute-data/${claimId}/entity-annot`;
+    const params = new HttpParams().set('attribute_name', attributeName);
+    return this.http.get<any[]>(url,{params})
   }
   
 }
