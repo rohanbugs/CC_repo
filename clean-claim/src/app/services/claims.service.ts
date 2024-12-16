@@ -30,6 +30,10 @@ export class ClaimsService {
     return this.http.get<any[]>(`${this.apiUrl}claim-data/${claimid}`);
   }
 
+  getPresentAttributes(claimid:string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}claim-ui-available-data/${claimid}`);
+  }
+
   getLabTableData(claimId: string, attributeName: string): Observable<any[]> {
     const url = `${this.apiUrl}claim-attribute-data/${claimId}/lab-table`;
     const params = new HttpParams().set('attribute_name', attributeName);

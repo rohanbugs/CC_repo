@@ -1,0 +1,31 @@
+<div class="container mt-1">
+    <div *ngIf="data.length > 0; else noData">
+      <div *ngFor="let item of attribute_data" class="row mb-1">
+        <div class="col-12">
+          <!-- Card for Each Item -->
+          <mat-card class="mat-elevation-z1">
+            <mat-card-content class="p-0">
+              <div class="d-flex flex-column flex-sm-row justify-content-between">
+           
+                <!-- Main Text -->
+                <div class="flex-grow-1 ms-sm-1">
+                  <p class="mb-0"> <span class="text-secondary ">{{ item.date }}</span> {{ item.text }} <a [href]="item.annot_link" target="_blank" style="color: #ff5733; text-decoration: none;">
+                    Click here to see annotation
+                  </a></p>
+                  
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Fallback if no data -->
+    <ng-template #noData>
+      <div class="text-center text-muted">
+        <p>No data available to display</p>
+      </div>
+    </ng-template>
+  </div>
+  

@@ -13,7 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ClaimsService } from '../../services/claims.service';
-import { EntityAnnotComponent } from '../entity-annot/entity-annot.component';
+import { EntityAnnotComponent } from '../../entity-annot/entity-annot.component';
 
 
 
