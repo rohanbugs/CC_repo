@@ -13,6 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ClaimsService } from '../../services/claims.service';
+import { EntityAnnotComponent } from '../entity-annot/entity-annot.component';
 
 
 
@@ -22,7 +23,7 @@ import { ClaimsService } from '../../services/claims.service';
   standalone: true,
   imports: [CommonModule,MatDialogModule,FormsModule,
     MatButtonModule,LinegraphComponent,MatInputModule,
-    TableviewComponent,MatNativeDateModule,MatDatepickerModule],
+    TableviewComponent,EntityAnnotComponent,MatNativeDateModule,MatDatepickerModule],
   templateUrl: './popup.component.html',
   styleUrl: './popup.component.css'
 })
