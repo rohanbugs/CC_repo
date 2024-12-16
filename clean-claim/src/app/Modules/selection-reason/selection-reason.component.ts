@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
@@ -29,7 +29,7 @@ interface Section {
 })
 export class SelectionReasonComponent {
 
-  
+   @Input() claimid!: string; 
 
   // Define the sections data
   sections: Section[] = [
@@ -71,19 +71,19 @@ export class SelectionReasonComponent {
   constructor(private dialog: MatDialog) {}
 
   openPopup(vitalLabel: string): void {
-    console.log('openpopup1')
+    console.log(vitalLabel,"id:",this.claimid)
     const dialogRef = this.dialog.open(PopupComponent, {
-      width: '85%', // You can specify a custom width for the popup
+      width: '90%', // You can specify a custom width for the popup
       height: '90%', // Optional: Adjust height
       panelClass: 'centered-dialog',
-      data: { vital: 'bc' }, // Pass the vital label as data
+      data: { attirbute: vitalLabel,claimid:this.claimid }, // Pass the vital label as data
     });
 
     // Optionally, you can handle the close event
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
-    console.log('openpopup')
+    console.log('openpopup:',vitalLabel)
   }
 
  
