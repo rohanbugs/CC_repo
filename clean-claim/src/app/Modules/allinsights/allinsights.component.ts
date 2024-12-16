@@ -54,7 +54,7 @@ export class AllinsightsComponent implements OnInit {
 
   ngOnInit(): void {
     this.claimsService.getClaims().subscribe((data) => {
-      this.drgRecords = [...data,...data.slice(2, 7)];
+      this.drgRecords = [...data,...data.slice(2, 7)];//using duplicate data for testing
       this.totalRecords = this.drgRecords.length;
     this.totalPages = Math.ceil(this.totalRecords / this.pageSize); // Calculate total pages
     this.paginateData();
