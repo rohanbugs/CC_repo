@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input,  } from '@angular/core';
+import { Component, Input, OnInit,  } from '@angular/core';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { ClaimsService } from '../../services/claims.service';
 
@@ -10,12 +10,15 @@ import { ClaimsService } from '../../services/claims.service';
   templateUrl: './entity-annot.component.html',
   styleUrl: './entity-annot.component.css'
 })
-export class EntityAnnotComponent {
+export class EntityAnnotComponent implements OnInit{
 
   @Input() claimId!: string;
   @Input() attribute!: string;
   attribute_data!:any[]
   constructor(private claimservice:ClaimsService){}
+  ngOnInit() {
+    this.fetchAttributeData()
+  }
 
 
 
