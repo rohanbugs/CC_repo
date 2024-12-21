@@ -8,6 +8,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ClaimsService } from '../../services/claims.service';
 import { ClaimDetailsComponent } from '../claim-details/claim-details.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AuditRemarkComponent } from '../audit-remark/audit-remark.component';
+import { CodingWorksheetComponent } from '../coding-worksheet/coding-worksheet.component';
 
 @Component({
   selector: 'app-allinsights',
@@ -17,9 +19,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatExpansionModule,
     MatIconModule,
     SelectionReasonComponent,
+    CodingWorksheetComponent,
     MatCard,
     MatMenuModule,
     ClaimDetailsComponent,
+    AuditRemarkComponent,
     MatPaginatorModule,
   ],
   templateUrl: './allinsights.component.html',

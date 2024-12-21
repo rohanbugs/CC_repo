@@ -1,64 +1,36 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, Input, SimpleChanges } from '@angular/core';
 import { MatCard } from '@angular/material/card';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { ClaimsService } from '../../services/claims.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { SelectionReasonComponent } from '../selection-reason/selection-reason.component';
+import { ClaimDetailsComponent } from '../claim-details/claim-details.component';
+import { AuditRemarkComponent } from '../audit-remark/audit-remark.component';
 
 
 @Component({
   selector: 'app-test',
   standalone: true,
-  imports: [ CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatCard,
+  imports: [ 
+    CommonModule,
+    MatPaginatorModule,
+    CommonModule,
+       MatExpansionModule,
+       MatIconModule,
+       SelectionReasonComponent,
+       MatCard,
+       MatMenuModule,
+       ClaimDetailsComponent,
+       AuditRemarkComponent,
+       MatPaginatorModule,
+       
   ],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent  {
- // Sample table data to pass to the LinegraphComponent
-
-
-constructor() {}
-expandedRow: number | null = null;
-
-  // Sample data
-  tableData = [
-    {
-      drgCode: '001',
-      auditLocator: 'AL123',
-      paidAmount: 2500,
-      patientId: 'P001',
-      assignedTo: 'Dr. John',
-      status: 'Pending',
-      drgCodeDescription: 'Description for DRG Code 001',
-    },
-    {
-      drgCode: '002',
-      auditLocator: 'AL124',
-      paidAmount: 3200,
-      patientId: 'P002',
-      assignedTo: 'Dr. Smith',
-      status: 'Completed',
-      drgCodeDescription: 'Description for DRG Code 002',
-    },
-    // Add more rows as needed
-  ];
-
-  toggleRow(index: number): void {
-    this.expandedRow = this.expandedRow === index ? null : index;
-  }
-  
-
-
-
-  
-
-  
+export class TestComponent  {active: number = 0;
+ 
 }
