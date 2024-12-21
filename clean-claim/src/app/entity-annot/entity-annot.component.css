@@ -1,0 +1,15 @@
+/* Adjust card padding and alignment */
+mat-card {
+    padding: 0rem;
+  }
+  
+  .text-info {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 576px) {
+    mat-card-content {
+      text-align: left;
+    }
+  }
+  

@@ -1,107 +1,16 @@
-<p>app-selection</p>
-<div class="container mt-1 ">
-    <!-- Vital Signs Section -->
 
-    <div class="mb-3">
-      <!-- <div *ngFor="let item of checklistItems" class="checklist-item">
-        <input type="checkbox" [id]="item.id" class="form-check-input">
-        <label [for]="item.id" class="form-check-label ms-2">{{ item.label }}</label>
-        <span class="info-icon" [title]="'Details about ' + item.label">
-          
-          <button mat-button (click)="openPopup(item.label)">i</button>
-        </span> 
-      </div> -->
-    
-      <div class="section-title">Vital Signs</div>
-      <div class="checklist-container">
-        <div class="checklist-item ">
-          <input type="checkbox" id="temperature" class="form-check-input">
-          <label for="temperature" class="form-check-label ms-2">Temperature</label>
-          <span class="info-icon" title="Details about Temperature"><button mat-button (click)="openPopup('Temperature')">i</button>
-
-            </span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="respiration" class="form-check-input">
-          <label for="respiration" class="form-check-label ms-2">Respiration</label>
-          <span class="info-icon" title="Details about Respiration">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="pulse" class="form-check-input">
-          <label for="pulse" class="form-check-label ms-2">Pulse</label>
-          <span class="info-icon" title="Details about Pulse">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="bloodPressure" class="form-check-input">
-          <label for="bloodPressure" class="form-check-label ms-2">Blood Pressure</label>
-          <span class="info-icon" title="Details about Blood Pressure">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="spo2" class="form-check-input">
-          <label for="spo2" class="form-check-label ms-2">SpO2</label>
-          <span class="info-icon" title="Details about SpO2">i</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Laboratory Tests Section -->
-    <div class="mb-3">
-      <div class="section-title">Laboratory Tests</div>
-      <div class="checklist-container">
-        <div class="checklist-item">
-          <input type="checkbox" id="arterialBloodGas" class="form-check-input">
-          <label for="arterialBloodGas" class="form-check-label ms-2">Arterial Blood Gas Test</label>
-          <span class="info-icon" title="Details about Arterial Blood Gas Test">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="bloodCulture" class="form-check-input">
-          <label for="bloodCulture" class="form-check-label ms-2">Blood Culture</label>
-          <span class="info-icon" title="Details about Blood Culture">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="chemistryPanel" class="form-check-input">
-          <label for="chemistryPanel" class="form-check-label ms-2">Chemistry Panel</label>
-          <span class="info-icon" title="Details about Chemistry Panel">i</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Signs and Symptoms Section -->
-    <div class="mb-3">
-      <div class="section-title">Signs and Symptoms</div>
-      <div class="checklist-container">
-        <div class="checklist-item">
-          <input type="checkbox" id="chills" class="form-check-input">
-          <label for="chills" class="form-check-label ms-2">Chills</label>
-          <span class="info-icon" title="Details about Chills">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="cough" class="form-check-input">
-          <label for="cough" class="form-check-label ms-2">Cough</label>
-          <span class="info-icon" title="Details about Cough">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="shortnessOfBreath" class="form-check-input">
-          <label for="shortnessOfBreath" class="form-check-label ms-2">Shortness of Breath</label>
-          <span class="info-icon" title="Details about Shortness of Breath">i</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Treatment Section -->
-    <div class="mb-3">
-      <div class="section-title">Treatment</div>
-      <div class="checklist-container">
-        <div class="checklist-item">
-          <input type="checkbox" id="antibiotics" class="form-check-input">
-          <label for="antibiotics" class="form-check-label ms-2">Antibiotics</label>
-          <span class="info-icon" title="Details about Antibiotics">i</span>
-        </div>
-        <div class="checklist-item">
-          <input type="checkbox" id="antifungals" class="form-check-input">
-          <label for="antifungals" class="form-check-label ms-2">Anti-Fungals</label>
-          <span class="info-icon" title="Details about Anti-Fungals">i</span>
-        </div>
+<div class="container mt-1">
+  <div *ngFor="let category of categories" class="mb-3">
+    <div class="section-title">{{ category.title }}</div>
+    <div class="checklist-container">
+      <div *ngFor="let item of category.items" class="checklist-item">
+        <input type="checkbox" [id]="item" class="form-check-input">
+        <label [for]="item" class="form-check-label ms-2">{{ item }}</label>
+        <span class="info-icon" [title]="item">
+          <button mat-button (click)="openPopup(item)">i</button>
+        </span>
       </div>
     </div>
   </div>
+</div>
+

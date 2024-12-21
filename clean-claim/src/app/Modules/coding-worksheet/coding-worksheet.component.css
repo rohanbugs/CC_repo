@@ -1,0 +1,17 @@
+.table-responsive {
+    overflow-x: auto;
+  }
+  
+  .mat-checkbox {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .mat-select {
+    width: 100%;
+  }
+  
+  input[type="number"] {
+    text-align: right;
+  }
+  

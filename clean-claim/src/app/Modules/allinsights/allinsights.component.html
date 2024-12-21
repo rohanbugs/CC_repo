@@ -3,7 +3,7 @@
 </div>
 
 
-<mat-card class="p-3 m-3">
+<mat-card class="p-2 m-3">
   <div class="table-responsive">
     <table class="table table-striped table-hover">
       <thead>
@@ -18,14 +18,14 @@
         </tr>
       </thead>
       <tbody>
-        <ng-container class="m-3" *ngFor="let row of drgRecords; let i = index">
+        <ng-container class="m-3" *ngFor="let row of pagedData; let i = index">
           <!-- Main Row -->
           <tr class="pointer">
-            <td (click)="toggleRow(i)">{{ row.description }}</td>
-            <td>{{ row.code }}</td>
-            <td>{{ row.amount  }}</td>
-            <td>{{ row.patientId }}</td>
-            <td>{{ row.patientName }}</td>
+            <td (click)="toggleRow(i)">{{ row.drg_description }}</td>
+            <td>{{ row.arl }}</td>
+            <td>{{ row.paid_amt  }}</td>
+            <td>{{ row.patient_id }}</td>
+            <td>{{ row.assigned_to }}</td>
             <td>{{ row.status }}</td>
             <td>
               <button mat-button [matMenuTriggerFor]="menu" class="menu-trigger">
@@ -43,7 +43,7 @@
           <!-- Collapsible Card -->
           <tr *ngIf="expandedRow === i">
             <td colspan="7" class="p-0">
-              <div class="card card-body">
+              <div class="card card-body p-0">
                <div class="panel-content">
                  <div class="accordion" id="accordionExample">
                    <div class="accordion-item">
@@ -56,110 +56,9 @@
                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                         <div class="details d-flex">
-                           <div class="left-container">
-                             <div class="patients_details d-flex">
-                               <h4>Patients Details</h4>
-                               <span>
-                                 <h6>Service Period</h6>
-                                 <h6>08/08/2024-08/10/2024</h6>
-                               </span>
+                        <app-claim-details [claimid]="row.claim_id"></app-claim-details>
+                       
 
-                             </div>
-                             <div class="d-flex justify-content-between">
-                               <span>
-                                 <h5>Patients Name</h5>
-                                 <span>John Doe</span>
-                               </span>
-                               <span class="d-flex justify-content-between">
-                                 <div class="flex-column">
-                                   <h5>Age</h5>
-                                   <h6>67yrs</h6>
-                                 </div>
-                                 <div class="ml-2">
-                                   <h5>Gender</h5>
-                                   <h6>Male</h6>
-                                 </div>
-                               </span>
-
-                             </div>
-
-                             <div class="discharge">
-                               <h5>Discharge Status</h5>
-                               <ul>
-                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati error fugiat
-                                   nihil voluptatum rem molestias. Excepturi et labore debitis iusto.</li>
-                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati error fugiat
-                                   nihil voluptatum rem
-                                   molestias. Excepturi et labore debitis iusto.</li>
-                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati error fugiat
-                                   nihil
-                                   voluptatum rem molestias. Excepturi et labore debitis iusto.</li>
-
-                               </ul>
-                             </div>
-                           </div>
-                           <div class="right-container">
-                             <h4>Claim Details</h4>
-                             <div class="grid-container">
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                               <div class="grid-item">
-                                 <div class="d-flex flex-column">
-                                   <span>Billed DRG</span>
-                                   <span>128</span>
-                                 </div>
-                               </div>
-                             </div>
-
-                           </div>
-                         </div>
 
                        </div>
                      </div>
@@ -174,15 +73,7 @@
                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
-                         collapse plugin adds the appropriate classes that we use to style each element. These classes
-                         control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                         can
-                         modify any of this with custom CSS or overriding our default variables. It's also worth
-                         noting that
-                         just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                         does limit
-                         overflow.
+                        <app-coding-worksheet></app-coding-worksheet>
                        </div>
                      </div>
                    </div>
@@ -196,7 +87,7 @@
                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                        <app-selection-reason></app-selection-reason>
+                        <app-selection-reason [claimid]="row.claim_id"></app-selection-reason>
                        </div>
                      </div>
                    </div>
@@ -233,16 +124,7 @@
                      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                         <strong>This is the first item's accordion body.</strong> It is shown by
-                         default, until the collapse
-                         plugin adds the appropriate classes that we use to style each element. These
-                         classes control the
-                         overall appearance, as well as the showing and hiding via CSS transitions. You
-                         can modify any of
-                         this with custom CSS or overriding our default variables. It's also worth
-                         noting that just about any
-                         HTML can go within the <code>.accordion-body</code>, though the transition
-                         does limit overflow.
+                         <app-audit-remark></app-audit-remark>
                        </div>
                      </div>
                    </div>
@@ -255,4 +137,12 @@
       </tbody>
     </table>
   </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button mat-button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button mat-button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  
 </mat-card>
