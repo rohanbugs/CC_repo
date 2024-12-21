@@ -35,6 +35,7 @@ export const routes: Routes = [
     {path:'summary',component:SummaryComponent},
     {path:'selection',component:SelectionReasonComponent},
     {path:'table',component:TableviewComponent},
-    {path:'mcp',component:MonthlyClaimProgressComponent}
+    {path:'mcp',component:MonthlyClaimProgressComponent},
+    
     
 ]
