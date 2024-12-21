@@ -1,5 +1,5 @@
 .sidebar {
-  width: 250px;
+  width: 170px;
   overflow: hidden; /* Prevent content from spilling */
   transition: width 0.3s;
   background-color: white;
