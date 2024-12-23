@@ -12,6 +12,7 @@ import { AllinsightsComponent } from './Modules/allinsights/allinsights.componen
 import { SelectionReasonComponent } from './Modules/selection-reason/selection-reason.component';
 import { TableviewComponent } from './tableview/tableview.component';
 import { MonthlyClaimProgressComponent } from './Modules/summary/monthly-claim-progress/monthly-claim-progress.component';
+import { TestComponent } from './Modules/test/test.component';
 
 
 export const routes: Routes = [
@@ -19,7 +20,7 @@ export const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'signup',component:SignupComponent},
     {path:'reset',component:ResetpasswordComponent},
-    // {path:'test',component:TestComponent},
+    {path:'test',component:TestComponent},
     // {path:'claims',component:DashboardComponent},
     // {path:'account',component:AccountComponent},
     // {path:'security',component:SecurityComponent},

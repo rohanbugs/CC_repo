@@ -43,9 +43,7 @@ export class AppComponent {
   // isExpanded = true;
   isSidebarOpen = true;
 
-  constructor(private router: Router) {
-    console.log('MAin component loaded');
-  }
+  constructor(private router: Router) {}
 
   shouldShowLayout(): boolean {
     const hiddenRoutes = ['/', '/login', '/signup', '/reset'];

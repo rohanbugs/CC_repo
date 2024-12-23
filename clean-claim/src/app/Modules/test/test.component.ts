@@ -31,6 +31,7 @@ import { AuditRemarkComponent } from '../audit-remark/audit-remark.component';
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent  {active: number = 0;
+export class TestComponent  {
+  active: number = 0;
  
 }

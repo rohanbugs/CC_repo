@@ -41,6 +41,7 @@ export class AllinsightsComponent implements OnInit {
   totalRecords: number = 0; // Total number of records
   pagedData: any[] = []; // Data to be displayed on the current page
   totalPages: number = 0; // New variable to store the number of pages
+  isLoading: boolean = true;
 
   toggleRow(index: number): void {
     this.expandedRow = this.expandedRow === index ? null : index;
@@ -57,22 +58,36 @@ export class AllinsightsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.claimsService.getClaims().subscribe((data) => {
-      this.drgRecords = [...data,...data.slice(2, 7)];//using duplicate data for testing
-      this.totalRecords = this.drgRecords.length;
-    this.totalPages = Math.ceil(this.totalRecords / this.pageSize); // Calculate total pages
-    this.paginateData();
-     
+    this.isLoading = true; // Set loading state before API call
+    this.claimsService.getClaims().subscribe({
+      next: (data) => {
+        this.drgRecords = [...data]; // Avoid excessive duplication
+        this.totalRecords = this.drgRecords.length;
+        this.totalPages = Math.ceil(this.totalRecords / this.pageSize);
+        this.paginateData();
+        this.isLoading = false; // Turn off loading after data is fetched
+      },
+      error: (err) => {
+        console.error('Error fetching claims:', err);
+        this.isLoading = false; // Ensure loading state is disabled on error
+      },
     });
-    
-  
   }
+
+  // ngOnInit(): void {
+  //   this.claimsService.getClaims().subscribe((data) => {
+  //     this.drgRecords = [...data,...data.slice(2, 7)];//using duplicate data for testing
+  //     this.totalRecords = this.drgRecords.length;
+  //   this.totalPages = Math.ceil(this.totalRecords / this.pageSize); // Calculate total pages
+  //   this.paginateData();
+
+  //   });
+
+  // }
   // Paginate data based on current page and page size
   paginateData(): void {
-
-    
-    console.log("records:",this.drgRecords)
-    console.log("records:",this.drgRecords.length)
+    console.log('records:', this.drgRecords);
+    console.log('records:', this.drgRecords.length);
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
     this.pagedData = this.drgRecords.slice(startIndex, endIndex);
