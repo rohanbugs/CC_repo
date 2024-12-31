@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { AllinsightsComponent } from '../allinsights/allinsights.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { BreadcrumbComponent } from "../breadcrumb/breadcrumb.component"
-import { SelectionReasonComponent } from '../selection-reason/selection-reason.component';
 // import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 
 @Component({
@@ -14,7 +13,7 @@ import { SelectionReasonComponent } from '../selection-reason/selection-reason.c
   imports: [
     CommonModule,
     MatExpansionModule,
-    MatIconModule, SelectionReasonComponent,
+    MatIconModule,
     AllinsightsComponent,
     BreadcrumbComponent,
     RouterModule,
