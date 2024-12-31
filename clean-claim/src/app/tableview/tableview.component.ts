@@ -1,19 +1,19 @@
 import { Component, Input } from '@angular/core';
-import { TabledataService } from './tabledata.service';
 import { NgFor, NgIf, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-tableview',
   standalone: true,
-  imports: [NgFor,NgIf,TitleCasePipe],
+  imports: [NgFor,TitleCasePipe],
   templateUrl: './tableview.component.html',
   styleUrl: './tableview.component.css'
 })
-export class TableviewComponent {
+export class 
+TableviewComponent {
 
  @Input() tableData: any[] = [];
 
-  constructor(private tabledataservice:TabledataService){}
+  constructor(){}
 
   ngOnInit(): void {
 
