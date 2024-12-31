@@ -1,0 +1,66 @@
+.sidebar {
+    width: 170px;
+    overflow: hidden; /* Prevent content from spilling */
+    transition: width 0.3s;
+    background-color: white;
+    color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    &.collapsed {
+      width: 70px;
+  
+      .logo img {
+        width: 50px;
+        height: auto;
+      }
+  
+      .nav-buttons a span,
+      .settings-button a span {
+        display: none; /* Hide the text when collapsed */
+      }
+    }
+  
+    .logo {
+      padding: 1rem;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    .nav-buttons,
+    .settings-button {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+  
+      a {
+        color: black;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        text-align: left;
+        cursor: pointer;
+  
+        mat-icon {
+          margin-right: 1rem;
+          font-size: 24px;
+        }
+  
+        span {
+          white-space: nowrap; /* Prevent text wrapping */
+          transition: opacity 0.3s; /* Smooth appearance/disappearance */
+        }
+      }
+    }
+  
+    .settings-button {
+      margin-top: auto;
+      a {
+        margin-bottom: 1rem;
+      }
+    }
+  }

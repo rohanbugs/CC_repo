@@ -1,0 +1,30 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+    <!-- Logo -->
+    <div class="logo" (click)="toggleSidebar()">
+      <img src="assets/logo.png" alt="Logo" />
+    </div>
+  
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons mt-4">
+      <a mat-list-item [routerLink]="'/summary'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>home</mat-icon>
+        <span *ngIf="!isCollapsed">Summary</span>
+      </a>
+      <a mat-list-item [routerLink]="'/claims'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>dashboard</mat-icon>
+        <span *ngIf="!isCollapsed">Dashboard</span>
+      </a>
+      <a mat-list-item [routerLink]="'/messages'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>message</mat-icon>
+        <span *ngIf="!isCollapsed">Messages</span>
+      </a>
+    </div>
+  
+    <!-- Settings Button -->
+    <div class="settings-button">
+      <a mat-list-item [routerLink]="'/settings'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>settings</mat-icon>
+        <span *ngIf="!isCollapsed">Settings</span>
+      </a>
+    </div>
+  </div>
