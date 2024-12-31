@@ -5,8 +5,6 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { MatDatepickerModule } from '@angular/material/datepicker';
 // import { ChartData, ChartOptions ,Chart,registerables} from 'chart.js';
 import { MatButtonModule } from '@angular/material/button';
-import {TestComponent} from '../test/test.component'
-import { TabledataService } from '../../tableview/tabledata.service';
 import { LinegraphComponent } from '../../linegraph/linegraph.component';
 import { TableviewComponent } from '../../tableview/tableview.component';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -41,7 +39,6 @@ export class PopupComponent implements OnInit{
 
   constructor(
     public dialogRef: MatDialogRef<PopupComponent>,
-    private tabledataservice: TabledataService,
     @Inject(MAT_DIALOG_DATA) public data: { attirbute: string; claimid: string },
     private claimservice:ClaimsService
   ) {

@@ -2,41 +2,22 @@
   <div class="row">
     <div class="d-flex justify-content-between align-items-center">
       <div>Remark</div>
-      <div>
-        <button mat-stroked-button *ngIf="!isEditing"  (click)="toggleEditing()">EDIT</button>
-        <button mat-stroked-button *ngIf="isEditing" (click)="toggleEditing()">SAVE</button>
+      
 
-        <button mat-stroked-button  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-
-        <div class="dropdown">
-         
-        </div>
-        
+      <div class="d-flex">
+        <button mat-stroked-button *ngIf="!isEditing" (click)="toggleEditing()">EDIT</button>
+        <button mat-stroked-button *ngIf="isEditing" (click)="saveRemark()">SAVE</button>
+        <select id="dropdown" [(ngModel)]="selectedStatus" name="dropdown" class="form-select">
+          <option *ngFor="let status of statuses" [value]="status.value">
+            {{ status.label }}
+          </option>
+        </select>
       </div>
-
     </div>
- 
-   
   </div>
 
   <div class="row">
-    <span *ngIf="!isEditing" (click)="startEditing()" class="editable-text">{{ remark }}</span>
-      <input
-        *ngIf="isEditing"
-        [(ngModel)]="remark"
-        type="text"
-        class="form-control"
-        (blur)="saveRemark()"
-        (keydown.enter)="saveRemark()"
-        #inputField
-      />
+    <!-- Editable input field if editing -->
+    <input [(ngModel)]="remark" type="text" class="form-control" [disabled]="!isEditing" />
   </div>
-  
 </div>

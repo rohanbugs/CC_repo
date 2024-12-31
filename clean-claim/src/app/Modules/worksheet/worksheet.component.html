@@ -1,0 +1,92 @@
+<!-- {{ tableData | json }} -->
+
+
+<div class="container mt-1">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-bordered table-hover text-center align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>Sr. No.</th>
+              <th>DX Code</th>
+              <th>Description</th>
+              <th>Diagnosis Primary</th>
+              <th>POA</th>
+              <th>Affects DRG</th>
+              <th>Complication Comorbidity</th>
+              <th>DRG</th>
+              <th>Weight</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of tableData; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>
+                {{ row.dx_code }}
+                <!-- <input [(ngModel)]="row.dx_code" class="form-control form-control-sm" [readonly]="!isEditing(i)" /> -->
+              </td>
+              <td>
+                {{ row.description }}
+                
+                <!-- <input [(ngModel)]="row.description" class="form-control form-control-sm" [readonly]="!isEditing(i)" /> -->
+              </td>
+              <td>
+                <input type="checkbox" [(ngModel)]="row.primary_diagnosis" [disabled]="!isEditing(i)" />
+              </td>
+              <td>
+                <input type="checkbox" [(ngModel)]="row.poa" [disabled]="!isEditing(i)" />
+              </td>
+              <td>
+                <input type="checkbox" [(ngModel)]="row.affects_drg" [disabled]="!isEditing(i)" />
+              </td>
+              <!-- <td>
+                <input [(ngModel)]="row.mcc_cc_hac" class="form-control form-control-sm" [readonly]="!isEditing(i)" />
+              </td> -->
+              <td>
+                <div class="input-group input-group-sm">
+                  <button 
+                    class="btn btn-outline-secondary" 
+                    type="button" 
+                    [disabled]="!isEditing(i)" 
+                    (click)="changeMccCcHac(row, -1)">
+                    &lt;
+                  </button>
+                  <input 
+                    [(ngModel)]="row.mcc_cc_hac" 
+                    class="form-control form-control-sm text-center" 
+                    readonly />
+                  <button 
+                    class="btn btn-outline-secondary" 
+                    type="button" 
+                    [disabled]="!isEditing(i)" 
+                    (click)="changeMccCcHac(row, 1)">
+                    &gt;
+                  </button>
+                </div>
+              </td>
+              
+
+              <td>
+                <input [(ngModel)]="row.revised_drg.code" class="form-control form-control-sm" type="number"
+                  [readonly]="!isEditing(i)"
+                  [ngClass]="{'text-danger': row.revised_drg.code > 800, 'text-success': row.revised_drg.code <= 800}" />
+              </td>
+              <td>
+                <input [(ngModel)]="row.revised_drg.weight" class="form-control form-control-sm" type="number"
+                  [readonly]="!isEditing(i)"
+                  [ngClass]="{'text-danger': row.revised_drg.weight > 1.5, 'text-success': row.revised_drg.weight <= 1.5}" />
+              </td>
+              <td>
+                <button class="btn btn-sm" [ngClass]="{'btn-primary': !isEditing(i), 'btn-success': isEditing(i)}"
+                  (click)="onButtonClick(row,i)">
+                  {{ isEditing(i) ? 'Save' : 'Edit' }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

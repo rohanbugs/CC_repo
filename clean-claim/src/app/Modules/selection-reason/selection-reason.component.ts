@@ -30,7 +30,9 @@ interface Categories {
 @Component({
   selector: 'app-selection-reason',
   standalone: true,
-  imports: [CommonModule,MatCardModule, MatCheckboxModule, MatDividerModule,PopupComponent,MatButtonModule],
+  imports: [CommonModule,
+    PopupComponent,
+    MatCardModule, MatCheckboxModule, MatDividerModule,MatButtonModule],
   templateUrl: './selection-reason.component.html',
   styleUrl: './selection-reason.component.css'
 })

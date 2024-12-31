@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TabledataService } from './tabledata.service';
+import { AuditRemarkService } from '../audit-remark.service';
 
-describe('TabledataService', () => {
-  let service: TabledataService;
+describe('AuditRemarkService', () => {
+  let service: AuditRemarkService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TabledataService);
+    service = TestBed.inject(AuditRemarkService);
   });
 
   it('should be created', () => {
