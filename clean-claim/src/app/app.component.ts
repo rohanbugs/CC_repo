@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidenavComponent } from './Modules/sidenav/sidenav.component';
 
 
 @Component({
@@ -33,14 +34,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    SidenavComponent
   ],
   
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  // title = 'clean-claim';
-  // isExpanded = true;
   isSidebarOpen = true;
 
   constructor(private router: Router) {}

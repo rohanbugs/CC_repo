@@ -10,6 +10,7 @@ import { ClaimDetailsComponent } from '../claim-details/claim-details.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AuditRemarkComponent } from '../audit-remark/audit-remark.component';
 import { CodingWorksheetComponent } from '../coding-worksheet/coding-worksheet.component';
+import { WorksheetComponent } from '../worksheet/worksheet.component';
 
 @Component({
   selector: 'app-allinsights',
@@ -19,7 +20,7 @@ import { CodingWorksheetComponent } from '../coding-worksheet/coding-worksheet.c
     MatExpansionModule,
     MatIconModule,
     SelectionReasonComponent,
-    CodingWorksheetComponent,
+    WorksheetComponent,
     MatCard,
     MatMenuModule,
     ClaimDetailsComponent,

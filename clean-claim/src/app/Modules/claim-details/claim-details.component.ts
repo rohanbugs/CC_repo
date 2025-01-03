@@ -20,7 +20,9 @@ export class ClaimDetailsComponent implements OnInit{
     console.log("claimid in ngOnInit:", this.claimid);
     this.claimsService.getclaimsDetails(this.claimid).subscribe((data) => {
       this.claimDetails = data;
+      console.log("claim details:", this.claimDetails);
     });
+    
   }
 
 }

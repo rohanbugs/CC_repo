@@ -70,7 +70,9 @@
                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                        <app-coding-worksheet></app-coding-worksheet>
+                        Coding Worksheet
+                        <!-- <app-coding-worksheet [claimid]="row.claim_id"></app-coding-worksheet> -->
+                        <app-worksheet [claimid]="row.claim_id"></app-worksheet>
                        </div>
                      </div>
                    </div>
@@ -121,7 +123,7 @@
                      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                        data-bs-parent="#accordionExample">
                        <div class="accordion-body">
-                         <app-audit-remark></app-audit-remark>
+                         <app-audit-remark [claimId]="row.claim_id"></app-audit-remark>
                        </div>
                      </div>
                    </div>
